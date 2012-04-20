@@ -3,7 +3,6 @@
  * @file Test example for Itaú Bank.
  * @copyright 2012 boletophp.com.br
  * @package Boletophp
- *
  */
 
 /**
@@ -18,34 +17,34 @@ $myArguments = array(
   // Bank code check digit.
   // 'bank_code_cd' => 'X',
   // Merchant's branch number (NO check digit).
-  'agencia' => 1234,
-  'agencia_dv' => '2',
+  'agencia' => 1354,
+  'agencia_dv' => 9,
   // Merchant's account number (NO check digit).
-  'conta'    => 12345,
+  'conta'    => 25077,
   // Check digit of Merchant's account number.
-  'conta_dv' => 3,
+  'conta_dv' => 9,
   // No thousand separator. Full stop for decimal separator. This is the total
   // amount before deductions/additions.
-  'valor_boleto' => '2952.95',
+  'valor_boleto' => '1.00',
   // Generally this is used for placing the order number.
-  'numero_documento' => '27.030195.10',
+  'numero_documento' => 1000,
   // Merchant's address.
-  'endereco' => 'street name and number',
+  'endereco' => 'Av. Ludovico da Riva Neto, 1226',
   // Merchant's city and state.
-  'cidade_uf'=> 'city and state',
+  'cidade_uf'=> 'Alta Floresta MT 78.580-000',
   // Merchant's name.
-  'cedente'  => 'ABC Company Ltd',
+  'cedente'  => 'Francisco Ferreira Luz',
   // Client's name (payer)
   'sacado' => 'John Doe',
   // Vary from bank to bank, so see readme file at bancos/BANKCODE/readme.txt .
-  'carteira' => 'A',
+  'carteira' => '157',
   // vary from bank to bank, so see readme file at bancos/BANKCODE/readme.txt
-  'carteira_nosso_numero' => '3-1-18-2',
+  'carteira_nosso_numero' => '157',
   //vary from bank to bank, so see readme file at bancos/BANKCODE/readme.txt
-  'nosso_numero' => '13871',
+  'nosso_numero' => '75582605',
   // Merchant's tax file number, see http://en.wikipedia.org/wiki/CNPJ for
   // more info.
-  'cpf_cnpj' => '000.000.000-00', 
+  'cpf_cnpj' => '462.083.893-48', 
   // Client's address line 1, includes street name and number.
   'endereco1' => 'street name and number',
   // Client's address line 2, includes city, state and zip code.
@@ -74,7 +73,7 @@ $myArguments = array(
    * You can set it to -1 to make it "cash against document" ( Contra
    * Apresentação ).
    */
-  // 'data_vencimento' => '25-07-2011',
+   'data_vencimento' => '23-04-2012',
   
   /**
    *  Use period as the decimal separator. This is the discount field (-).
