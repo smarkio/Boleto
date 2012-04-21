@@ -1,1 +1,2 @@
 bancos/*
+!bancos/*.txt
