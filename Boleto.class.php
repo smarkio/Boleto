@@ -1,32 +1,24 @@
 <?php
 /**
- * Project:  Boletophp
- * File:   Boleto.class.php
+ * This is the main class that does all the calculations and generatens the
+ * Boleto output.
  *
- * This code is released under the GNU General Public License.
- * See COPYRIGHT.txt and LICENSE.txt.
- *
- * This library was built based on Boletophp v0.17
- * Many thanks to the mantainers and collaborators of Boletophp project at
- * boletophp.com.br.
- *
- * If you would like to collaborate by suggesting code and documentation
- * enhancements or
- * by extending new issuer bank implamentations then please check out readme.txt
- *  
- * @file This is the main Boleto class
- * @copyright 2012 boletophp.com.br
- * @package Boletophp
+ * You will also need to install at least one bank plugin for this to work.
+ * 
+ * @mainpage Boleto Libray - Main Class.
  */
 
+/**
+ * Boleto Library main Class.
+ */
 abstract class Boleto {
-  /**
+ /**
   * Indicate that an warning should be issued.
   */
   const BOLETO_WARNING = 'warning';
   /**
-  * Image folder location.
-  */
+   * Image folder location.
+   */
   const BOLETO_IMAGES = '../imagens/';
 
   /**
@@ -411,19 +403,18 @@ abstract class Boleto {
   }
 
   /**
-   * Calculates and construct the FEBRABAN specification.
+   * Calculates and constructs the FEBRABAN specification.
    * 
-   * 01-03 (3)  -> Código do banco sem o digito.
-   * 04-04 (1)  -> Código da Moeda (9-Real).
-   * 05-05 (1)  -> Dígito verificador do código de barras.
-   * 06-09 (4)  -> Fator de vencimento.
-   * 10-19 (10) -> Valor Nominal do Título.
-   * 20-44 (25) -> Campo Livre.
+   * 01-03 (3)  -> Código do banco sem o digito
+   * 04-04 (1)  -> Código da Moeda (9-Real)
+   * 05-05 (1)  -> Dígito verificador do código de barras
+   * 06-09 (4)  -> Fator de vencimento
+   * 10-19 (10) -> Valor Nominal do Título
+   * 20-44 (25) -> Campo Livre
    *               This is calculated at the child's class implementation by
    *               febraban20to44() method.
    *
-   * @see Documentation at
-   *  http://www.febraban.org.br/Acervo1.asp?id_texto=195&id_pagina=173&palavra=
+   * @see Documentation at http://www.febraban.org.br/Acervo1.asp?id_texto=195&id_pagina=173&palavra=
    */
   private function febraban(){
     // Positions 1 to 3.
