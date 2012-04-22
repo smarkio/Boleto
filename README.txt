@@ -45,9 +45,16 @@ TOPICOS
 
 3. IMPLEMENTANDO NOVOS BANCOS
 
-   Leia também http://help.github.com/fork-a-repo e
+   Leia também
+               Como Forkear um Repositório e Solicitar Pull Requests no Github
+               http://help.github.com/fork-a-repo e
                http://help.github.com/send-pull-requests
+               
+               Documentação do Código desta Biblioteca
                http://hmcservicos.com.br/pt-br/api/doxygen-documentacao-biblioteca-boleto
+               
+               Você deverá seguir o padrão Doxygen ao comentar o seu Código
+               http://www.stack.nl/~dimitri/doxygen/docblocks.html
         
    3.1 Acesse https://github.com/drupalista-br/boletophp e clique e "Fork".
    3.2 Baixe a sua cópia forkeada com o seguinte comando:
@@ -96,6 +103,17 @@ TOPICOS
        solicitando a criação de um novo repositório.
 
 4. CONTRIBUINDO COM CÓDIGO EM GERAL
+
+   Leia também
+               Como Forkear um Repositório e Solicitar Pull Requests no Github
+               http://help.github.com/fork-a-repo e
+               http://help.github.com/send-pull-requests
+               
+               Documentação do Código desta Biblioteca
+               http://hmcservicos.com.br/pt-br/api/doxygen-documentacao-biblioteca-boleto
+               
+               Você deverá seguir o padrão Doxygen ao comentar o seu Código
+               http://www.stack.nl/~dimitri/doxygen/docblocks.html
 
    4.1 Se você ainda não fez então faça as opções  3.1 e 3.2.
    
