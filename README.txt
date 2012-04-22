@@ -1,39 +1,60 @@
-@package Boletophp
-
 TOPICOS
-  1. Visão Geral
-  2. Testando a biblioteca
-  3. Reportando Bugs, Pedindo Ajuda e Fazendo Sugestões
-  4. Implementando novos Bancos ou Contribuindo com Código em Geral
+  1. Como Usar / Testar a biblioteca
+  2. Reportando Bugs, Pedindo Ajuda e Fazendo Sugestões
+  3. Implementando novos Bancos ou Contribuindo com Código em Geral
 
-1. TESTANDO A BIBLIOTECA
+1. COMO USAR / TESTAR A BIBLIOTECA
    1.1 Vá até a pasta pública do seu servidor e baixe a biblioteca com o
        seguinte comando:
-       git clone --branch 1.x-dev
-       https://github.com/drupalista-br/boletophp.git boletophp
+       $ git clone --branch 1.x-dev
+         https://github.com/drupalista-br/boletophp.git boletophp
+       
+       ou faça o Download da última versão estável em
+          https://github.com/drupalista-br/Boleto/tags
+          
+   1.2 Instale pelo menos um plugin de um banco com o seguinte comando:
+       $ cd boletophp
+       $ cd bancos
+       $ git clone --branch 1.x-dev
+         https://github.com/drupalista-br/Boleto-XXX.git XXX
+
+         Onde XXX deverá ser substituido pelo código do Banco.
+       
+         ou faça o Download da última versão estável do plugin em
+            https://github.com/drupalista-br/Boleto/tree/1.x-dev/bancos
+         
+         Extraia o arquivo baixado em ../boletophp/bancos
+         Renomeie a pasta extraida com código do Banco ao qual o plugin pertence.
+         
+         Exemplo: ../boletophp/bancos/001 para o Banco do Brasil.
    
-   1.2 No seu navegador chame os testes que estão dentro da pasta
-       boletophp/test. Por exemplo:
-       http://localhost/boletophp/test/caixa_economica.test.php
+   1.2 No seu navegador gere um boleto de teste acessando o arquivo de teste que
+       esta dentro da pasta ../boletophp/bancos/XXX/NOME-DO-BANCO.test.php
+       Por exemplo:
+       http://localhost/boletophp/bancos/001/banco_do_brasil.test.php
        
    1.3 Cada banco implementado possui um script de test dentro da pasta
-       boletophp/test. Use os arquivos de test do(s) banco(s) que você queira
-       integrar à sua aplicação como exemplo.
+       boletophp/bancos/XXX. Onde XXX é o código do banco.
+       
+       Use os arquivos de test do(s) banco(s) que você queira integrar à sua
+       aplicação como exemplo.
 
 2. REPORTANDO BUGS, PEDINDO AJUDA E FAZENDO SUGESTÕES
 
    Acesse https://github.com/drupalista-br/boletophp/issues
 
-3. IMPLEMENTANDO NOVOS BANCOS ou CONTRIBUINDO COM CÓDIGO EM GERAL
+3. IMPLEMENTANDO NOVOS BANCOS
 
    Leia também http://help.github.com/fork-a-repo e
                http://help.github.com/send-pull-requests
+               http://hmcservicos.com.br/pt-br/api/doxygen-documentacao-biblioteca-boleto
         
    3.1 Acesse https://github.com/drupalista-br/boletophp e clique e "Fork".
    3.2 Baixe a sua cópia forkeada com o seguinte comando:
-       git clone --branch 1.x-dev
-       git@github.com:USUARIO/boletophp.git boletophp
-   
+
+       $ git clone --branch 1.x-dev
+         git@github.com:USUARIO/boletophp.git boletophp
+          
        Onde USUARIO deverá ser substituido pelo seu usuario no Github.
    
    3.3 Dentro da pasta boletophp/bancos crie uma subpasta e a nomeia com o
@@ -70,7 +91,17 @@ TOPICOS
        Dê uma olhada nas implementações já existentes na pasta boletophp/bancos
        para usar como exemplo.
 
-    3.7 Uma vez que fizer o push dos seus commits, acesse o repositório em
-        https://github.com/USUARIO/boletophp, onde USUARIO deverá ser substituido
-        pelo seu usuário no Github, o solicite um Pull Request para o branch
-        2.x-dev.
+   3.7 Uma vez que fizer o push dos seus commits, acesse
+       https://github.com/drupalista-br/Boleto/issues e crie um issue
+       solicitando a criação de um novo repositório.
+
+4. CONTRIBUINDO COM CÓDIGO EM GERAL
+
+   4.1 Se você ainda não fez então faça as opções  3.1 e 3.2.
+   
+   4.2 Faça as modificações / correções no código, commit e push para o seu
+       repositório Forkeado.
+       
+   4.3 Acesse o seu reposório forkeado no Github e clique em "Pull Request".
+       O Pull Request ira criar automaticamente um issue solicitando que o seu
+       código seja mergido.
