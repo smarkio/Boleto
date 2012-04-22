@@ -1,11 +1,14 @@
 TOPICOS
   1. Como Usar / Testar a biblioteca
   2. Reportando Bugs, Pedindo Ajuda e Fazendo Sugestões
-  3. Implementando novos Bancos ou Contribuindo com Código em Geral
+  3. Implementando novos Bancos
+  3. Contribuindo com Código em Geral
 
 1. COMO USAR / TESTAR A BIBLIOTECA
+
    1.1 Vá até a pasta pública do seu servidor e baixe a biblioteca com o
        seguinte comando:
+       
        $ git clone --branch 1.x-dev
          https://github.com/drupalista-br/boletophp.git boletophp
        
@@ -59,8 +62,7 @@ TOPICOS
    3.1 Acesse https://github.com/drupalista-br/boletophp e clique e "Fork".
    3.2 Baixe a sua cópia forkeada com o seguinte comando:
 
-       $ git clone --branch 1.x-dev
-         git@github.com:USUARIO/boletophp.git boletophp
+       $ git clone --branch 1.x-dev git@github.com:USUARIO/boletophp.git boletophp
           
        Onde USUARIO deverá ser substituido pelo seu usuario no Github.
    
@@ -115,7 +117,7 @@ TOPICOS
                Você deverá seguir o padrão Doxygen ao comentar o seu Código
                http://www.stack.nl/~dimitri/doxygen/docblocks.html
 
-   4.1 Se você ainda não fez então faça as opções  3.1 e 3.2.
+   4.1 Se você ainda não fez então faça os passos 3.1 e 3.2.
    
    4.2 Faça as modificações / correções no código, commit e push para o seu
        repositório Forkeado.
