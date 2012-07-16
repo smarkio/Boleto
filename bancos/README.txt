@@ -1,6 +1,8 @@
 Leia o tópico "Como Usar / Testar a biblioteca" em
 https://github.com/drupalista-br/Boleto/blob/1.x-dev/README.txt para saber como instalar o(s) Plugin(s).
 
+Por favor ajude a desenvolver mais carteiras, o processo é bem simples, leia as instruções no link acima.
+
 Links para Download das versões estáveis dos Plugins:
 
 Banco do Brasil:
