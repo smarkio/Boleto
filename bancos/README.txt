@@ -1,5 +1,5 @@
 Leia o tópico "Como Usar / Testar a biblioteca" em
-https://github.com/drupalista-br/Boleto para saber como instalar o(s) Plugin(s).
+https://github.com/drupalista-br/Boleto/blob/1.x-dev/README.txt para saber como instalar o(s) Plugin(s).
 
 Links para Download das versões estáveis dos Plugins:
 
