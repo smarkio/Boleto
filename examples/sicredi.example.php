@@ -1,22 +1,20 @@
 <?php
 /**
- * @file Test example for Bradesco Bank.
- * @copyright 2012 boletophp.com.br
- * @package Boletophp
- *
+ * @file
+ *   Test example for Sicredi Bank.
  */
 
 /**
  * Include the main boleto class file.
  */
-include_once('../Boleto.class.php');
+include_once '../Boleto.class.php';
 
 $myArguments = array(
   // Merchant's bank code (NO check digit). Note that this is not the same as
   // the branch number.
-  'bank_code' => '237',
+  'bank_code' => '748',
   // Bank code check digit.
- // 'bank_code_cd' => 'X',
+  'bank_code_cd' => 'X',
   // Merchant's branch number (NO check digit).
   'agencia' => 1234,
   'agencia_dv' => '2',

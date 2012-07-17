@@ -1,9 +1,7 @@
 <?php
 /**
- * @file Test example for Itaú Bank.
- * @copyright 2012 boletophp.com.br
- * @package Boletophp
- *
+ * @file
+ *   Test example for Itaú Bank.
  */
 
 /**

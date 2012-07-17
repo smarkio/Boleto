@@ -1,9 +1,7 @@
 <?php
 /**
- * @file Test example for Sicredi Bank.
- * @copyright 2012 boletophp.com.br
- * @package Boletophp
- *
+ * @file
+ *   Test example for Caixa Economica Bank.
  */
 
 /**
@@ -14,21 +12,20 @@ include_once('../Boleto.class.php');
 $myArguments = array(
   // Merchant's bank code (NO check digit). Note that this is not the same as
   // the branch number.
-  'bank_code' => '748',
-  // Bank code check digit.
-  'bank_code_cd' => 'X',
+  'bank_code' => '104',
+  // 'bank_code_cd' => 'X',
   // Merchant's branch number (NO check digit).
   'agencia' => 1234,
   'agencia_dv' => '2',
   // Merchant's account number (NO check digit).
-  'conta'    => 12345,
+  'conta'    => 12345678901,
   // Check digit of Merchant's account number.
   'conta_dv' => 3,
   // No thousand separator. Full stop for decimal separator. This is the total
   // amount before deductions/additions.
   'valor_boleto' => '2952.95',
   // Generally this is used for placing the order number.
-  'numero_documento' => '27.030195.10',
+  'numero_documento' => '27030195',
   // Merchant's address.
   'endereco' => 'street name and number',
   // Merchant's city and state.
@@ -40,9 +37,9 @@ $myArguments = array(
   // Vary from bank to bank, so see readme file at bancos/BANKCODE/readme.txt .
   'carteira' => 'A',
   // vary from bank to bank, so see readme file at bancos/BANKCODE/readme.txt
-  'carteira_nosso_numero' => '3-1-18-2',
+  'carteira_nosso_numero' => '80',
   //vary from bank to bank, so see readme file at bancos/BANKCODE/readme.txt
-  'nosso_numero' => '13871',
+  'nosso_numero' => '80',
   // Merchant's tax file number, see http://en.wikipedia.org/wiki/CNPJ for
   // more info.
   'cpf_cnpj' => '000.000.000-00', 
@@ -164,6 +161,5 @@ $myBoleto = Boleto::load_boleto($myArguments);
 // If you wanna print out the html then call
 $myBoleto->output();
 
-// Use $myBoleto->output(FALSE); to only populate the output property without
-// rendering the html
+// Use $myBoleto->output(FALSE); to only populate the output property without rendering the html
 
