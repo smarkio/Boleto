@@ -1,4 +1,5 @@
 <?php
+include_once '/opt/lampp/htdocs/dev-tests/sites/all/libraries/chromephp/ChromePhp.php';
 /**
  * This is the main class that does all the calculations and generatens the
  * Boleto output.
@@ -21,7 +22,12 @@ abstract class Boleto {
   /**
    * Image folder location.
    */
-  const BOLETO_IMAGES = '../imagens/';
+  const IMAGES_FOLDER = '../imagens/';
+  
+  /**
+   * The FEBRABAN base date for calculating the "due on" field value.
+   */
+  const DUEON_BASE_DATE = '07-10-1997';
 
   /**
    * Issuer bank code.
@@ -39,9 +45,14 @@ abstract class Boleto {
   private $is_implemented = TRUE;
 
   /**
+   * The relative and absolute path locations for the plugin's folder.
+   */
+  static protected $plugins_folder_location = array();
+
+  /**
    * Hold warnings issued by the library itself and the bank issuer plugins.
    */
-  public $warnings = array();
+  protected $warnings = array();
 
   /**
    * Method registration.
@@ -54,15 +65,14 @@ abstract class Boleto {
   /**
    * General settings.
    */
-  public $settings = array(
-    'bank_logo'       => '',
+  protected $settings = array(
+    'bank_logo' => '',
     // Folder location for images.
-    'images'        => '',
-    'style'         => '',
-    'fator_vencimento_base' => '07-10-1997',
+    'file_location' => '',
+    'style' => '',
     // Location and name of the html template file to render the output.
-    'template'        => '',
-    'bar_code'        => array(
+    'template' => '',
+    'bar_code' => array(
       // Thinner bar width.
       'fino'    => 1,
       // Thicker bar width.
@@ -72,7 +82,6 @@ abstract class Boleto {
       'black_bar' => 'p.png',
       'white_bar' => 'b.png',
       '#_strips'  => 226,
-      'bar_codes' => array('00110', '10001', '01001', '11000', '00101', '10100', '01100', '00011', '10010', '01010'),
     ),
   );
 
@@ -174,9 +183,9 @@ abstract class Boleto {
    * will then instantiate the Boleto object accordingly.
    *
    * @param Array $arguments
-   *   TODO: Document this.
+   *   Array of boleto field values.
    */
-  public static function load_boleto($arguments) {
+  public static function load_boleto($arguments = array()) {
     $bank_code = trim($arguments['bank_code']);
     $plugin_location = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'bancos' . DIRECTORY_SEPARATOR . $bank_code . DIRECTORY_SEPARATOR. 'Banco_' . $bank_code . '.php';
     
@@ -383,7 +392,7 @@ abstract class Boleto {
    * Script from http:// phpbrasil.com/articles/print.php/id/1034 .
    */
   private function fator_vencimento(){
-    $from = $this->settings['fator_vencimento_base'];
+    $from = self::DUEON_BASE_DATE;
     $to   = $this->computed['data_vencimento'];
     
     if ($this->arguments['data_vencimento'] == -1){
@@ -548,7 +557,7 @@ abstract class Boleto {
    */
   private function settings(){
     $this->bank_name = 'Ops!!! Aparentemente o banco informado nao esta implementado. No juice for you.';
-    $this->settings['bank_logo'] = self::BOLETO_IMAGES . 'bank_logo_default.jpg';
+    $this->settings['bank_logo'] = self::IMAGES_FOLDER . 'bank_logo_default.jpg';
     $this->settings['style'] = '..' . DIRECTORY_SEPARATOR . 'style.css';
     $this->settings['template'] = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'boleto.tpl.php';
   
@@ -558,7 +567,7 @@ abstract class Boleto {
     $this->computed['valor_cobrado'] = ($this->arguments['valor_boleto'] - $subtractions) + $additions;
     
     // Format valor_boleto.
-    $this->arguments['valor_boleto'] = number_format($this->arguments['valor_boleto'], 2, '.', '');
+    $this->arguments['valor_boleto'] = number_format((float)$this->arguments['valor_boleto'], 2, '.', '');
     // format valor_cobrado.
     $this->computed['valor_cobrado'] = number_format($this->computed['valor_cobrado'], 2, '.', '');
     
@@ -625,7 +634,7 @@ abstract class Boleto {
     }
     
     // Get bar code values from settings.
-    $barcodes = $this->settings['bar_code']['bar_codes'];
+    $barcodes = array('00110', '10001', '01001', '11000', '00101', '10100', '01100', '00011', '10010', '01010');
 
     // Apply bar codes to the febraban code.
     for($f1 = 9; $f1 >= 0; $f1--){ 
@@ -645,8 +654,8 @@ abstract class Boleto {
     $height = $this->settings['bar_code']['altura'];
     
     // Get the black and white bar images.
-    $black = self::BOLETO_IMAGES . $this->settings['bar_code']['black_bar'];
-    $white = self::BOLETO_IMAGES . $this->settings['bar_code']['white_bar'];
+    $black = $this->settings['file_location'] . self::IMAGES_FOLDER . $this->settings['bar_code']['black_bar'];
+    $white = $this->settings['file_location'] . self::IMAGES_FOLDER . $this->settings['bar_code']['white_bar'];
     
     // Create a sequence of black and white strips.
     $total = $this->settings['bar_code']['#_strips'];
@@ -739,9 +748,9 @@ abstract class Boleto {
       'cpf_cnpj' => $this->arguments['cpf_cnpj'],
       'endereco' => $this->arguments['endereco'],
       'cidade_uf' => $this->arguments['cidade_uf'],
-      'bank_logo_path' => $this->settings['bank_logo'],
-      'images' => self::BOLETO_IMAGES,
-      'style' => $this->settings['style'],
+      'bank_logo_path' => $this->settings['file_location'] . $this->settings['bank_logo'],
+      'images' => $this->settings['file_location'] . self::IMAGES_FOLDER,
+      'style' => $this->settings['file_location'] . $this->settings['style'],
       'codigo_banco_com_dv' => $this->computed['codigo_banco_com_dv'],
       'cedente' => $this->arguments['cedente'],
       'especie' => $this->arguments['especie'],
@@ -781,7 +790,7 @@ abstract class Boleto {
     }
     else {
       // Set default.
-      $this->output['merchant_logo'] = self::BOLETO_IMAGES . DIRECTORY_SEPARATOR . 'merchant_logo.png';
+      $this->output['merchant_logo'] = $this->settings['file_location'] . self::IMAGES_FOLDER . 'merchant_logo.png';
     }
     // Check if child class wants to change anything before rendering it out.
     if ($this->is_implemented) {
@@ -796,7 +805,59 @@ abstract class Boleto {
   }
 
   /**
-   * Set Warnings.
+   * Scan for installed bank plugins.
+   *
+   * @return Array
+   *   An array of bank codes.
+   * 
+   */
+  static function installedPlugins() {
+
+    $plugins_folder_location = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'bancos';
+
+    $bank_codes = scandir($plugins_folder_location);
+
+    if (is_array($bank_codes)) {
+      foreach ($bank_codes as $key => $bank_code) {
+        if (!ctype_alnum($bank_code) ||
+            !is_dir($plugins_folder_location . DIRECTORY_SEPARATOR . $bank_code)) {
+          // Remove all values that have dot(s) in it. (files and . and ..)
+          unset($bank_codes[$key]);
+        }
+      }
+    }
+    else {
+      $bank_codes = array();
+    }
+
+    return $bank_codes;
+  }
+
+  /**
+   * Setter for settings property.
+   *
+   * @param Array $settings
+   *   The array of setting values.
+   */
+  public function setSettings($settings = array()) {
+    foreach ($settings as $setting_key => $setting_value) {
+      if (is_array($setting_value)) {
+        foreach ($setting_value as $setting_value_key => $setting_value_value) {
+          if (isset($this->settings[$setting_key][$setting_value_key])) {
+            $this->settings[$setting_key][$setting_value_key] = $setting_value_value;
+          }
+        }
+      }
+      else {
+        if (isset($this->settings[$setting_key])) {
+          $this->settings[$setting_key] = $setting_value;
+        }
+      }
+    }
+  }
+
+  /**
+   * Setter for warnings property.
    * 
    * @param Array $message
    *  The array key holds the field name and the array Value holds the Message
