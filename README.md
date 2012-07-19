@@ -83,7 +83,10 @@ Onde USUARIO deverá ser substituido pelo seu usuario no Github.
     (Obrigatório) Banco_XXX.php - Onde XXX é o código do banco.  
     (obrigatório) logo.jpg      - Logo marca do banco.  
     (obrigatório) README.txt    - Instruções sobre a formatação dos campos do  
-                                  Boleto para este banco. 
+                                  Boleto para este banco.
+
+                                  Pode-se user README.md ao invés de README.txt  
+                                  Saiba mais sobre Markdown em http://github.github.com/github-flavored-markdown
  
     (opcional) layout.tpl.php   - Se este arquivo existir então o template  
                                   padrão será desconsiderado e este template  
@@ -96,17 +99,28 @@ Onde USUARIO deverá ser substituido pelo seu usuario no Github.
     (obrigatório) unit-testing/simpletest.php
     
     Este arquivo deverá conter no mínimo o seguinte código:  
-    <?php
-    /**
-     * @file
-     * Unit testing.
-     */
+    <?php  
+    /**  
+     * @file  
+     * Unit testing.  
+     */  
 
-     class TestOfXXX {
+    require_once "../../../unit-testing/boleto.test.php";  
     
-     }
+    class TestOf104 extends BoletoTestCase{  
+      protected $mockingArguments;  
+    
+      function mockingArguments() {  
+        $this->mockingArguments = array(  
+           // Adicione aqui os values que influenciam na construção
+           // propriedade $boleto->febraban['20-44'].
+        );
+      }
+    }
     
     Onde XXX em TestOfXXX é o código do banco.
+    Exemplo:  
+    ![Sample code for Simpletest](http://a4.sphotos.ak.fbcdn.net/hphotos-ak-snc7/318763_10151041078913007_339267144_n.jpg)
 
 ***
 
@@ -126,11 +140,13 @@ Por exemplo:
     (opcional)    - custom()  
     (opcional)    - outputValues()  
     
-Dê uma olhada nas implementações já existentes na pasta boleto-lib/bancos para usar como exemplo.
+Dê uma olhada nas implementações já existentes na pasta `../boleto-lib/bancos` para usar como exemplo.
     
 ***
 
-**_3.8_** Uma vez que fizer o push dos seus commits, acesse https://github.com/drupalista-br/Boleto/issues e crie um issue solicitando a criação de um novo repositório.
+**_3.8_** Uma vez que fizer o push dos seus commits, acesse `https://github.com/drupalista-br/Boleto/issues`
+e crie um issue solicitando a criação e listagem de seu novo repositório para o seu novo plugin caso ainda
+não exista.
 
 ## 4. CONTRIBUINDO COM CÓDIGO EM GERAL
 
@@ -168,19 +184,19 @@ Leia também
 http://pt.wikipedia.org/wiki/SimpleTest e  
 http://www.simpletest.org/en/first_test_tutorial.html
 
+![Simpletest for Boleto PHP Library](http://a2.sphotos.ak.fbcdn.net/hphotos-ak-ash4/394649_10151040968123007_358031888_n.jpg)
+
 ***
 
 **_5.1_** Como testar
 
-1. Faça o download da biblioteca [Simple Test](http://www.simpletest.org/en/download.html) e
+1. Faça o download da biblioteca [Simpletest](http://www.simpletest.org/en/download.html) e
 extraia o arquivo compactado para `../boleto-lib/unit-testing/simpletest`  
-2. No seu navegador acesse `http://localhost/boleto-lib/unit-testing/boleto.test.php`. Testa todos os plugins
-instalados.
-3. Caso queira testar o plugin de um banco especifico acrescente o parâmetro `?bank_code=XXX`.
+2. No seu navegador acesse `http://localhost/boleto-lib/bancos/XXX/unit-testing/simpletest.php`.
 Onde XXX é o código do banco.  
 
    Exemplo:  
-   `http://localhost/boleto-lib/unit-testing/boleto.test.php?bank_code=237`
+   `http://localhost/boleto-lib/bancos/104/unit-testing/simpletest.php`
 
 **_5.2_** Onde e Como escrever Testes de Unidades
 

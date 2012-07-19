@@ -16,7 +16,6 @@ abstract class BoletoTestCase extends UnitTestCase {
   protected $plugin_class_file;
   protected $plugin_class_name;
   protected $plugin_simpletest_class_name;
-  protected $febraban;
 
   function __construct() {
 
@@ -30,7 +29,7 @@ abstract class BoletoTestCase extends UnitTestCase {
 
     if (method_exists($this, 'mockingArguments')) {
       $this->mockingArguments();
-      // Use the mockary data from the plugin implementation.
+      // Use the mockary data instead from the plugin implementation.
       $arguments = $this->mockingArguments;
     }
 
@@ -42,40 +41,7 @@ abstract class BoletoTestCase extends UnitTestCase {
       include_once $plugin_class_file;
   
       $this->boletoObject = Boleto::load_boleto($arguments);
-
-      $this->febraban = $this->getReflectedPropertyValue($this->boletoObject, 'febraban');
     }
-  }
-
-  /**
-   * Removes the "protected" lock from a protected property.
-   *
-   * @param String | Object $class
-   *   This is either a class name or an instantiated object.
-   * @param String $propertyName
-   *   The name of the property that is going to get its value unlocked.
-   *
-   * @return Mix
-   *   The property value.
-   */
-  public static function getReflectedPropertyValue($class, $propertyName) {
-    $reflectedClass = new ReflectionClass($class);
-    $property = $reflectedClass->getProperty($propertyName);
-
-    // The setAccessible method works only from PHP 5.3 or higher.
-    $property->setAccessible(true);
- 
-    return $property->getValue($class);
-  }
-
-  /**
-   * You must have PHP 5.3 or higher running.
-   * This is not a requirement for using the Boleto Library but for running
-   * some of these unit tests.
-   */
-  function testYouMustHavePHP53RunningForThisSimpleTestToWork() {
-    $is_53 = (strnatcmp(phpversion(),'5.3.0') >= 0) ? TRUE : FALSE;
-    $this->assertTrue($is_53);
   }
 
   function testTheBankCodeArgumentIsTheSameAsCodeInTheSimpleTestClassName() {
@@ -107,8 +73,47 @@ abstract class BoletoTestCase extends UnitTestCase {
     $this->assertFalse(empty($this->mockingArguments));
   }
 
-  function testFebraban20to44PropertyHas15Digits() {
-    $this->assertTrue(is_numeric($this->febraban['20-44']));
-    $this->assertTrue(strlen($this->febraban['20-44']) == 14);
+  function testFebraban20to44PropertyIsNumericAndHas15Digits() {
+    $febraban = $this->boletoObject->febrabanPropertyGetter();
+    $this->assertTrue(is_numeric($febraban['20-44']));
+    $this->assertTrue(strlen($febraban['20-44']) == 25);
+  }
+  
+  function testLinhaDigitavelHasTheRequiredNumberOfCharactersAndIsNumeric() {
+    $output = $this->boletoObject->outputPropertyGetter();
+    $lengh = strlen($output['linha_digitavel']);
+
+    $this->assertEqual($lengh, 54);
+
+    $linha_digitavel = str_replace(' ', '', $output['linha_digitavel']);
+    $linha_digitavel = str_replace('.', '', $linha_digitavel);
+
+    $this->assertTrue(is_numeric($linha_digitavel));
+    $this->assertEqual(strlen($linha_digitavel), 47);
+    
+
+  }
+
+  function testPluginReadmeFileExistsAndItsNameFollowsTheConvention() {
+    $settings = $this->boletoObject->settingsPropertyGetter();
+    
+    $readme = explode('/', $settings['readme']);
+    $readme = end($readme);
+
+    $convention_names = array('README.txt', 'README.md');
+
+    $this->assertTrue(in_array($readme, $convention_names));
+    $this->assertTrue(file_exists("../$readme"));
+  }
+
+  function testPluginBankLogoFileExistsAndItIsOfJpgType() {
+    $output = $this->boletoObject->outputPropertyGetter();
+
+    $bank_logo = explode('/', $output['bank_logo_path']);
+    $bank_logo = end($bank_logo);
+
+    $this->assertEqual($bank_logo, 'logo.jpg');
+    $this->assertTrue(file_exists("../$bank_logo"));
+    $this->assertEqual(exif_imagetype("../$bank_logo"), IMAGETYPE_JPEG);
   }
 }
