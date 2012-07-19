@@ -1,3 +1,4 @@
 unit-testing/simpletest/*
 bancos/*
 !bancos/*.txt
+!bancos/*.md
