@@ -166,6 +166,17 @@ abstract class Boleto {
     // Campo Livre. Set by child class (issuer bank implementation).
     '20-44' => '',
   );
+  
+  protected $startUp = array(
+    'settings',
+    'data_vencimento',
+    'fator_vencimento',
+    'codigo_banco_com_dv',
+    'febraban',
+    'linha_digitavel',
+    // Generate bar code strips.
+    'barcode', 
+  );
 
   /**
    * @see the method output().
@@ -237,19 +248,7 @@ abstract class Boleto {
       }
     }
 
-    // Call the start up methods.
-    $startUp = array(
-      'settings',
-      'data_vencimento',
-      'fator_vencimento',
-      'codigo_banco_com_dv',
-      'febraban',
-      'linha_digitavel',
-      // Generate bar code strips.
-      'barcode', 
-    );
-
-    foreach($startUp as $methodName) {
+    foreach($this->startUp as $methodName) {
       $this->$methodName();
     }
   }
@@ -703,7 +702,10 @@ abstract class Boleto {
     $img_widths[] = $thicker;
     $img_widths[] = $thinner;
     $img_widths[] = $thinner;
-    
+
+    // Clear up any previous construction.
+    $this->computed['bar_code']['strips'] = '';
+
     // Render the output.
     foreach($img_widths as $key => $width){
       // Rendering.
@@ -902,6 +904,11 @@ abstract class Boleto {
           $this->settings[$setting_key] = $setting_value;
         }
       }
+    }
+
+    // Reconstruct the object again.
+    foreach($this->startUp as $methodName) {
+      $this->$methodName();
     }
   }
 
