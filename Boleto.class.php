@@ -6,6 +6,7 @@
  * You will also need to install at least one bank plugin for this to work.
  * 
  * @mainpage Boleto Libray - Main Class.
+ * @author Francisco Luz <franciscoferreiraluz@yahoo.com.au>
  */
 
 /**
