@@ -123,7 +123,7 @@ será usado. Veja a implementação do Banco do Brasil como exemplo</td>
 
         require_once "../../../unit-testing/boleto.test.php";  
         
-        class TestOf104 extends BoletoTestCase{  
+        class TestOfXXX extends BoletoTestCase{  
           protected $mockingArguments;  
         
           function mockingArguments() {  
