@@ -1,15 +1,16 @@
 ![Boleto Library Logo](http://a6.sphotos.ak.fbcdn.net/hphotos-ak-ash3/556061_10151041426758007_738498480_n.jpg)
 
 # TOPICOS  
-1. [Como Usar / Testar a biblioteca](#1-como-usar--testar-a-biblioteca)
+1. [Como Usar e Integrar esta Biblioteca à Sua Aplicação](#1-como-usar--testar-a-biblioteca)
 2. [Reportando Bugs, Pedindo Ajuda e Fazendo Sugestões](#2-reportando-bugs-pedindo-ajuda-e-fazendo-sugest%C3%95es)
 3. [Implementando novos Bancos e Carteiras](#3-implementando-novos-bancos-e-carteiras)
 4. [Contribuindo com Código em Geral](#4-contribuindo-com-c%C3%93digo-em-geral)
 5. [Testes de Unidades (Simple Test)](#5-testes-de-unidades-simple-test)
 
-## 1. COMO USAR / TESTAR A BIBLIOTECA
+## 1. COMO USAR E INTEGRAR ESTA BIBLIOTECA À SUA APLICAÇÃO
 
-**_1.1_** Vá até a pasta pública do seu servidor e baixe a biblioteca com o seguinte comando:  
+**_1.1_** Vá até a pasta pública do seu servidor e baixe a cópia mais recente desta biblioteca
+com o seguinte comando:  
 `$ git clone --branch 1.x-dev https://github.com/drupalista-br/boleto.git boleto-lib`  
 
 ou faça o Download da última versão estável em https://github.com/drupalista-br/Boleto/tags
@@ -32,11 +33,11 @@ ou faça o Download da última versão estável do plugin em https://github.com/
 
 ***
 
-**_1.3_** No seu navegador gere um boleto de teste acessando o arquivo de teste que esta dentro
-da pasta `../boleto-lib/bancos/XXX/NOME_DO_BANCO.test.php`  
+**_1.3_** No seu navegador gere um boleto de teste acessando o script de exemplo que esta dentro
+da pasta `../boleto-lib/bancos/XXX/example.php`  
 
 Por exemplo:  
-`http://localhost/boleto-lib/bancos/001/banco_do_brasil.example.php`  
+`http://localhost/boleto-lib/bancos/001/example.php`  
 
 ***       
 Cada banco implementado possui um script de examplo dentro da pasta `../boleto-lib/bancos/XXX`.  
@@ -46,7 +47,7 @@ Use os arquivos de examplo do(s) banco(s) que você queira integrar à sua aplic
 
 ## 2. REPORTANDO BUGS, PEDINDO AJUDA E FAZENDO SUGESTÕES
 
-Acesse https://github.com/drupalista-br/boleto-lib/issues
+Abra chamados em https://github.com/drupalista-br/boleto-lib/issues
 
 ## 3. IMPLEMENTANDO NOVOS BANCOS E CARTEIRAS
 
@@ -218,9 +219,7 @@ Leia também
 >2. Documentação do API:  
    Precisando de um Patrocínio para hospedar o [phpDocumentor](http://www.phpdoc.org)
 
-***         
-
-3. Você deverá seguir o padrão Doxygen ao comentar o seu Código
+>3. Você deverá seguir o padrão Doxygen ao comentar o seu Código
    [http://www.stack.nl/~dimitri/doxygen/docblocks.html](http://www.stack.nl/~dimitri/doxygen/docblocks.html)
 
 ***
