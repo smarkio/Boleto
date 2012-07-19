@@ -237,9 +237,16 @@ O código dos Testes de Unidades estão alojados em dois locais. São eles:
 2. Nos arquivos localizados nas pastas de cada plugin, `../boleto-lib/bancos/XXX/unit-testing/simpletest.php`.
 Onde XXX é o código do banco.
 
-Caso você esteja contribuindo apenas com um novo plugin de banco ou adicionando ou atualizando uma carteira de
-um plugin já existente, provavelmente você não precisará mexer no código em `../boleto-lib/unit-testing/boleto.test.php`
-
-Provavelmente não seja necessário, mas caso queira fazer testes de unidades em seu plugin de banco, você deverá
+Provavelmente não seja necessário, mas caso queira adicionar testes de unidades em um plugin de banco, você deverá
 adicionar o seu código de testes, além dos elementos obrigatório do item 3.5, em
 `../boleto-lib/bancos/XXX/unit-testing/simpletest.php`
+
+Para que os seus métodos de test sejam chamados você deverá colocar o prefixo test no nome de seus métodos.
+
+Por Exemplo:
+function testNomeExplicativoDoMeuTesteNoFormatoDesteExemplo() {
+  // testes aqui.
+}
+
+Mais exemplos em http://www.simpletest.org/en/first_test_tutorial.html e também no arquivo
+`../boleto-lib/unit-testing/boleto.test.php`
