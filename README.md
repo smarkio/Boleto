@@ -93,7 +93,7 @@ Onde USUARIO deverá ser substituido pelo seu usuario no Github.
                                   implementação do Banco do Brasil como exemplo.  
 
 
-    (obrigatório) unit-testing/plugin.test.php
+    (obrigatório) unit-testing/simpletest.php
     
     Este arquivo deverá conter no mínimo o seguinte código:  
     <?php
@@ -102,7 +102,7 @@ Onde USUARIO deverá ser substituido pelo seu usuario no Github.
      * Unit testing.
      */
 
-     class TestOfXXX extends BoletoTestCase {
+     class TestOfXXX {
     
      }
     
@@ -169,10 +169,14 @@ http://pt.wikipedia.org/wiki/SimpleTest e
 http://www.simpletest.org/en/first_test_tutorial.html
 
 ***
+
 **_5.1_** Como testar
 
-1. No seu navegador acesse `http://localhost/boleto-lib/unit-testing/boleto.test.php`  
-2. Caso queira testar o blugin de um banco especifico acrescente o parâmetro `?bank_code=XXX`.
+1. Faça o download da biblioteca [Simple Test](http://www.simpletest.org/en/download.html) e
+extraia o arquivo compactado para `../boleto-lib/unit-testing/simpletest`  
+2. No seu navegador acesse `http://localhost/boleto-lib/unit-testing/boleto.test.php`. Testa todos os plugins
+instalados.
+3. Caso queira testar o plugin de um banco especifico acrescente o parâmetro `?bank_code=XXX`.
 Onde XXX é o código do banco.  
 
    Exemplo:  
@@ -182,5 +186,6 @@ Onde XXX é o código do banco.
 
 O código dos Testes de Unidades estão alojados em dois locais. São eles:
 
-1. No arquivo em `../boleto-lib/unit-testing/boleto.test.php`;  
-2. Nos arquivos localizados nas pastas de cada plugin, `../boleto-lib/bancos/XXX/unit-testing/plugin.test.php`.
+1. No arquivo de testes principal em `../boleto-lib/unit-testing/boleto.test.php` e  
+2. Nos arquivos localizados nas pastas de cada plugin, `../boleto-lib/bancos/XXX/unit-testing/simpletest.php`.
+Onde XXX é o código do banco.
