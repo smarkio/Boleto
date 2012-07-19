@@ -1,16 +1,11 @@
-<table>
-  <tr>
-      <td>
+![Boleto Library Logo](http://a6.sphotos.ak.fbcdn.net/hphotos-ak-ash3/556061_10151041426758007_738498480_n.jpg)
+
 # TOPICOS  
 1. [Como Usar / Testar a biblioteca](#1-como-usar--testar-a-biblioteca)
 2. [Reportando Bugs, Pedindo Ajuda e Fazendo Sugestões](#2-reportando-bugs-pedindo-ajuda-e-fazendo-sugest%C3%95es)
 3. [Implementando novos Bancos e Carteiras](#3-implementando-novos-bancos-e-carteiras)
 4. [Contribuindo com Código em Geral](#4-contribuindo-com-c%C3%93digo-em-geral)
 5. [Testes de Unidades (Simple Test)](#5-testes-de-unidades-simple-test)
-      </td>
-      <td>![Boleto Library Logo](http://a6.sphotos.ak.fbcdn.net/hphotos-ak-ash3/556061_10151041426758007_738498480_n.jpg)</td>
-  </tr>
-</table>
 
 ## 1. COMO USAR / TESTAR A BIBLIOTECA
 
