@@ -80,51 +80,68 @@ Onde USUARIO deverá ser substituido pelo seu usuario no Github.
 
 **_3.5_** Crie os seguintes arquivos dentro da subpasta que acabou de criar:
        
-    (Obrigatório) Banco_XXX.php - Onde XXX é o código do banco.  
-    (obrigatório) logo.jpg      - Logo marca do banco.  
-    (obrigatório) README.txt    - Instruções sobre a formatação dos campos do  
-                                  Boleto para este banco.
+<table>
+    <tr>
+        <td>Obrigatório</td>
+        <td>Banco_XXX.php</td>
+        <td>Onde XXX é o código do banco</td>
+    </tr>
+    <tr>
+        <td>Obrigatório</td>
+        <td>logo.jpg</td>
+        <td>Logo marca do banco</td>
+    </tr>
+    <tr>
+        <td>Obrigatório</td>
+        <td>README.txt ou README.md</td>
+        <td>Instruções sobre a formatação dos campos do Boleto para este banco. 
+Pode-se user README.md ao invés de README.txt. Saiba mais sobre Markdown em http://github.github.com/github-flavored-markdown
+</td>
+    </tr>
+    <tr>
+        <td>opcional</td>
+        <td>layout.tpl.php</td>
+        <td>Se este arquivo existir então o template padrão será desconsiderado e este template 
+será usado. Veja a implementação do Banco do Brasil como exemplo</td>
+    </tr>
+    <tr>
+        <td>opcional</td>
+        <td>style.css</td>
+        <td>Mesmo caso do layout.tpl.php. Dê uma olhada na implementação do Banco do Brasil como exemplo</td>
+    </tr>
+    <tr>
+        <td>obrigatório</td>
+        <td>unit-testing/simpletest.php</td>
+        <td>Veja exemplo de código logo abaixo.</td>
+    </tr>
+</table> 
 
-                                  Pode-se user README.md ao invés de README.txt  
-                                  Saiba mais sobre Markdown em http://github.github.com/github-flavored-markdown
- 
-    (opcional) layout.tpl.php   - Se este arquivo existir então o template  
-                                  padrão será desconsiderado e este template  
-                                  será usado. Veja a implementação do Banco do  
-                                  Brasil como exemplo.  
-    (opcional) style.css        - Mesmo caso do layout.tpl.php. Dê uma olhada na  
-                                  implementação do Banco do Brasil como exemplo.  
+    
+***
 
+**_3.5_**  O arquivo `unit-testing/simpletest.php` deverá conter no mínimo o seguinte código:  
 
-    (obrigatório) unit-testing/simpletest.php
-    
-    Este arquivo deverá conter no mínimo o seguinte código:  
-    <?php  
-    /**  
-     * @file  
-     * Unit testing.  
-     */  
+        require_once "../../../unit-testing/boleto.test.php";  
+        
+        class TestOf104 extends BoletoTestCase{  
+          protected $mockingArguments;  
+        
+          function mockingArguments() {  
+            $this->mockingArguments = array(  
+               // Adicione aqui os values que influenciam na construção
+               // propriedade $boleto->febraban['20-44'].
+            );
+          }
+        }
 
-    require_once "../../../unit-testing/boleto.test.php";  
-    
-    class TestOf104 extends BoletoTestCase{  
-      protected $mockingArguments;  
-    
-      function mockingArguments() {  
-        $this->mockingArguments = array(  
-           // Adicione aqui os values que influenciam na construção
-           // propriedade $boleto->febraban['20-44'].
-        );
-      }
-    }
-    
-    Onde XXX em TestOfXXX é o código do banco.
-    Exemplo:  
-    ![Sample code for Simpletest](http://a4.sphotos.ak.fbcdn.net/hphotos-ak-snc7/318763_10151041078913007_339267144_n.jpg)
+Onde XXX em TestOfXXX é o código do banco.  
+Exemplo:
+
+![Sample code for Simpletest](http://a4.sphotos.ak.fbcdn.net/hphotos-ak-snc7/318763_10151041078913007_339267144_n.jpg)
 
 ***
 
-**_3.6_** No arquivo Banco_XXX.php você deverá criar uma classe chamada Banco_XXX  que extends Boleto.  
+**_3.7_** No arquivo Banco_XXX.php você deverá criar uma classe chamada Banco_XXX  que extends Boleto.  
 
 Por exemplo:  
 >class Banco_237 extends Boleto{  
@@ -133,18 +150,32 @@ Por exemplo:
        
 ***
 
-**_3.7_** Na classe Banco_XXX que acabara de criar você precisa implementar os seguintes métodos:  
+**_3.8_** Na classe Banco_XXX que acabara de criar você precisa implementar os seguintes métodos:  
 
-    (opcional)    - setUp()  
-    (Obrigatório) - febraban_20to44()  
-    (opcional)    - custom()  
-    (opcional)    - outputValues()  
+<table>
+    <tr>
+        <td>opcional</td>
+        <td>setUp()</td>
+    </tr>
+    <tr>
+        <td>Obrigatório</td>
+        <td>febraban_20to44()</td>
+    </tr>
+    <tr>
+        <td>opcional</td>
+        <td>custom()</td>
+    </tr>
+    <tr>
+        <td>opcional</td>
+        <td>outputValues()</td>
+    </tr>
+</table>
     
 Dê uma olhada nas implementações já existentes na pasta `../boleto-lib/bancos` para usar como exemplo.
     
 ***
 
-**_3.8_** Uma vez que fizer o push dos seus commits, acesse `https://github.com/drupalista-br/Boleto/issues`
+**_3.9_** Uma vez que fizer o push dos seus commits, acesse `https://github.com/drupalista-br/Boleto/issues`
 e crie um issue solicitando a criação e listagem de seu novo repositório para o seu novo plugin caso ainda
 não exista.
 
@@ -191,7 +222,7 @@ http://www.simpletest.org/en/first_test_tutorial.html
 **_5.1_** Como testar
 
 1. Faça o download da biblioteca [Simpletest](http://www.simpletest.org/en/download.html) e
-extraia o arquivo compactado para `../boleto-lib/unit-testing/simpletest`  
+extraia o arquivo compactado em `../boleto-lib/unit-testing/simpletest`  
 2. No seu navegador acesse `http://localhost/boleto-lib/bancos/XXX/unit-testing/simpletest.php`.
 Onde XXX é o código do banco.  
 
