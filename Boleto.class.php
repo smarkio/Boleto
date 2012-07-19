@@ -1,5 +1,4 @@
 <?php
-include_once '/opt/lampp/htdocs/dev-tests/sites/all/libraries/chromephp/ChromePhp.php';
 /**
  * This is the main class that does all the calculations and generatens the
  * Boleto output.
