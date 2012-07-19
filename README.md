@@ -139,26 +139,34 @@ será usado. Veja a implementação do Banco do Brasil como exemplo</td>
 
         <?php
         /**
-         * @file
-         * Unit testing.
-         */
-        require_once "../../../unit-testing/boleto.test.php";  
+        * @file
+        * Unit testing.
+        */
         
-        class TestOfXXX extends BoletoTestCase{  
-          protected $mockingArguments;  
+        require_once "../../../unit-testing/boleto.test.php";
         
-          function mockingArguments() {  
-            $this->mockingArguments = array(  
-               // Adicione aqui os values que influenciam na construção
-               // propriedade $boleto->febraban['20-44'].
+        class TestOfXXX extends BoletoTestCase{
+          protected $mockingArguments;
+        
+          function mockingArguments() {
+            $this->mockingArguments = array(
+              array(
+                // Argumentos do Primeiro test case.
+              ),
+              array(
+                // Argumentos do Segundo test case.
+              ),
+              // E assim por diante. Dê uma olhada no simpletest.php do
+              // Banco do Brasil para um exemplo com mais de um test case.
             );
           }
         }
 
+
 Onde XXX em TestOfXXX é o código do banco.  
 Exemplo:
 
-![Sample code for Simpletest](http://a4.sphotos.ak.fbcdn.net/hphotos-ak-snc7/318763_10151041078913007_339267144_n.jpg)
+![Sample code for Simpletest](http://a1.sphotos.ak.fbcdn.net/hphotos-ak-prn1/532436_10151041714503007_978552871_n.jpg)
 
 ***
 

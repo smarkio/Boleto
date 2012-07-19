@@ -25,7 +25,7 @@ abstract class BoletoTestCase extends UnitTestCase {
     // Get the second part of the explosion debris.
     $bank_code = $this->bank_code = $bank_code[1];
 
-    $arguments = array('bank_code' => $bank_code);
+    $arguments = array(array('bank_code' => $bank_code));
 
     if (method_exists($this, 'mockingArguments')) {
       $this->mockingArguments();
@@ -39,22 +39,27 @@ abstract class BoletoTestCase extends UnitTestCase {
       $plugin_class_file = $this->plugin_class_file = "../Banco_$bank_code.php";
       
       include_once $plugin_class_file;
-  
-      $this->boletoObject = Boleto::load_boleto($arguments);
+
+      // Instantiate one boleto object for each test case.
+      foreach($arguments as $object => $test_case_arguments) {
+        $this->boletoObject[$object] = Boleto::load_boleto($test_case_arguments);
+      }
     }
   }
 
   function testBoletoObjectsHasBeenInstantiated() {
-    $this->assertTrue(is_object($this->boletoObject));
+    foreach($this->boletoObject as $test_case_obj) {
+      $this->assertTrue(is_object($test_case_obj));
+    }
   }
 
   function testPluginSimpleTestClassExists() {
-    $bank_code = $this->mockingArguments['bank_code'];
+    $bank_code = $this->mockingArguments[0]['bank_code'];
     $this->assertTrue(class_exists("TestOf$bank_code"));
   }
 
   function testTheBankCodeArgumentIsTheSameAsCodeInTheSimpleTestClassName() {
-    $this->assertEqual($this->mockingArguments['bank_code'], $this->bank_code);
+    $this->assertEqual($this->mockingArguments[0]['bank_code'], $this->bank_code);
   }
 
   function testPluginClassFileExists() {
@@ -66,7 +71,7 @@ abstract class BoletoTestCase extends UnitTestCase {
   }
 
   function testFebraban20to44MethodExists() {
-    $this->assertTrue(method_exists($this->boletoObject, 'febraban_20to44'));
+    $this->assertTrue(method_exists($this->boletoObject[0], 'febraban_20to44'));
   }
 
   function testMockingArgumentsExists() {
@@ -74,33 +79,37 @@ abstract class BoletoTestCase extends UnitTestCase {
   }
 
   function testMockingArgumentsPropertyIsAnArrayAndIsPopulated() {
-    $this->assertTrue(is_array($this->mockingArguments));
-    $this->assertFalse(empty($this->mockingArguments));
+    foreach ($this->mockingArguments as $test_case_arguments) {
+      $this->assertTrue(is_array($test_case_arguments));
+      $this->assertFalse(empty($test_case_arguments));
+    }
   }
 
   function testFebraban20to44PropertyIsNumericAndHas15Digits() {
-    $febraban = $this->boletoObject->febrabanPropertyGetter();
-    $this->assertTrue(is_numeric($febraban['20-44']));
-    $this->assertTrue(strlen($febraban['20-44']) == 25);
+    foreach($this->boletoObject as $test_case_obj) {
+      $febraban = $test_case_obj->febrabanPropertyGetter();
+      $this->assertTrue(is_numeric($febraban['20-44']));
+      $this->assertTrue(strlen($febraban['20-44']) == 25);
+    }
   }
   
   function testLinhaDigitavelHasTheRequiredNumberOfCharactersAndIsNumeric() {
-    $output = $this->boletoObject->outputPropertyGetter();
-    $lengh = strlen($output['linha_digitavel']);
-
-    $this->assertEqual($lengh, 54);
-
-    $linha_digitavel = str_replace(' ', '', $output['linha_digitavel']);
-    $linha_digitavel = str_replace('.', '', $linha_digitavel);
-
-    $this->assertTrue(is_numeric($linha_digitavel));
-    $this->assertEqual(strlen($linha_digitavel), 47);
-    
-
+    foreach($this->boletoObject as $test_case_obj) {
+      $output = $test_case_obj->outputPropertyGetter();
+      $lengh = strlen($output['linha_digitavel']);
+  
+      $this->assertEqual($lengh, 54);
+  
+      $linha_digitavel = str_replace(' ', '', $output['linha_digitavel']);
+      $linha_digitavel = str_replace('.', '', $linha_digitavel);
+  
+      $this->assertTrue(is_numeric($linha_digitavel));
+      $this->assertEqual(strlen($linha_digitavel), 47);
+    }
   }
 
   function testPluginReadmeFileExistsAndItsNameFollowsTheConvention() {
-    $settings = $this->boletoObject->settingsPropertyGetter();
+    $settings = $this->boletoObject[0]->settingsPropertyGetter();
     
     $readme = explode('/', $settings['readme']);
     $readme = end($readme);
@@ -112,7 +121,7 @@ abstract class BoletoTestCase extends UnitTestCase {
   }
 
   function testPluginBankLogoFileExistsAndItIsOfJpgType() {
-    $output = $this->boletoObject->outputPropertyGetter();
+    $output = $this->boletoObject[0]->outputPropertyGetter();
 
     $bank_logo = explode('/', $output['bank_logo_path']);
     $bank_logo = end($bank_logo);
