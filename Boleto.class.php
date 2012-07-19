@@ -248,9 +248,7 @@ abstract class Boleto {
       }
     }
 
-    foreach($this->startUp as $methodName) {
-      $this->$methodName();
-    }
+    $this->constructObject();
   }
 
   /**
@@ -709,11 +707,13 @@ abstract class Boleto {
     // Render the output.
     foreach($img_widths as $key => $width){
       // Rendering.
-      $img = $img_strips[$key];
-      $this->computed['bar_code']['strips'] .= "<img src=$img width=$width height=$height border=0>";
-      
-      // Strip widths for debug checking.
-      $this->computed['bar_code']['widths'] .=  $width;
+      if (isset($img_strips[$key])) {
+        $img = $img_strips[$key];
+        $this->computed['bar_code']['strips'] .= "<img src=$img width=$width height=$height border=0>";
+        
+        // Strip widths for debug checking.
+        $this->computed['bar_code']['widths'] .=  $width;
+      }
     }
   }
 
@@ -802,6 +802,15 @@ abstract class Boleto {
     // It's time for rendering it. Yaaay!!!
     if ($render){
       include_once $this->settings['template'];
+    }
+  }
+
+  /**
+   * Call the construction methods.
+   */
+  protected function constructObject() {
+    foreach($this->startUp as $methodName) {
+      $this->$methodName();
     }
   }
 
@@ -907,9 +916,7 @@ abstract class Boleto {
     }
 
     // Reconstruct the object again.
-    foreach($this->startUp as $methodName) {
-      $this->$methodName();
-    }
+    $this->constructObject();
   }
 
   /**

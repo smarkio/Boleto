@@ -44,6 +44,15 @@ abstract class BoletoTestCase extends UnitTestCase {
     }
   }
 
+  function testBoletoObjectsHasBeenInstantiated() {
+    $this->assertTrue(is_object($this->boletoObject));
+  }
+
+  function testPluginSimpleTestClassExists() {
+    $bank_code = $this->mockingArguments['bank_code'];
+    $this->assertTrue(class_exists("TestOf$bank_code"));
+  }
+
   function testTheBankCodeArgumentIsTheSameAsCodeInTheSimpleTestClassName() {
     $this->assertEqual($this->mockingArguments['bank_code'], $this->bank_code);
   }
@@ -54,10 +63,6 @@ abstract class BoletoTestCase extends UnitTestCase {
 
   function testPluginClassExists() {
     $this->assertTrue(class_exists($this->plugin_class_name));
-  }
-
-  function testBoletoObjectsHasBeenInstantiated() {
-    $this->assertTrue(is_object($this->boletoObject));
   }
 
   function testFebraban20to44MethodExists() {
@@ -115,5 +120,9 @@ abstract class BoletoTestCase extends UnitTestCase {
     $this->assertEqual($bank_logo, 'logo.jpg');
     $this->assertTrue(file_exists("../$bank_logo"));
     $this->assertEqual(exif_imagetype("../$bank_logo"), IMAGETYPE_JPEG);
+  }
+
+  function testPluginExampleFileExists() {
+    $this->assertTrue(file_exists("../example.php"));
   }
 }
