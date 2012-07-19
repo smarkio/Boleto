@@ -75,9 +75,10 @@ Leia também:
 Onde USUARIO deverá ser substituido pelo seu usuario no Github.  
 
 ***
-**_3.4_** Dentro da pasta boleto-lib/bancos crie uma subpasta e a nomeia com o código do banco que você irá implementar. Por exemplo:  
+**_3.4_** Dentro da pasta `../boleto-lib/bancos` crie uma subpasta e a nomeia com o código
+do banco que você irá implementar. Por exemplo:  
 
-`boleto-lib/bancos/237`  
+`../boleto-lib/bancos/237`  
 
 ***
 
