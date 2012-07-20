@@ -1,5 +1,5 @@
 # Leia o tópico
-[Como Usar / Testar a biblioteca](https://github.com/drupalista-br/Boleto/blob/1.x-dev/README.md#1-como-usar--testar-a-biblioteca).
+[Como Usar e Integrar esta Biblioteca à Sua Aplicação](https://github.com/drupalista-br/Boleto/blob/1.x-dev/README.md#1-como-usar--testar-a-biblioteca).
 
 ### Por favor ajude a desenvolver mais carteiras, o processo é bem simples, leia as instruções no link acima.
 
