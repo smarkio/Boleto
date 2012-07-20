@@ -368,7 +368,7 @@ O código dos Testes de Unidades estão alojados em dois locais. São eles:
 Onde XXX é o código do banco.
 
 Provavelmente não seja necessário, mas caso queira adicionar testes de unidades em um plugin de banco, você deverá
-adicionar o seu código de testes, além dos elementos obrigatório do item 3.5, em
+adicionar o seu código de testes, além dos elementos obrigatório do item 3.3, em
 `../boleto-lib/bancos/XXX/unit-testing/simpletest.php`
 
 Para que os seus métodos de teste sejam chamados você deverá colocar o prefixo `test` no nome de seus métodos.
