@@ -187,22 +187,76 @@ Por exemplo:
     <tr>
         <td>opcional</td>
         <td>setUp()</td>
+        <td></td>
     </tr>
     <tr>
         <td>Obrigatório</td>
         <td>febraban_20to44()</td>
+        <td>A linha digitável e o código de barras são calculados com base num número com 44 digitos
+        chamado de especificação febraban. Veja abaixo como este número é constituido.  
+
+        As posições 1 a 19 é padrão para todos os bancos. As posições 20 a 44 é livre para os bancos
+        armazenem as informações que quizerem e na forma que quizerem.  
+
+        Assim, este método "febraban_20to44()" deverá construir este número com total de 15 digitos, de acordo
+        com as espeficações das carteiras do banco, e armazena-lo na propriedade $this->febraban['20-44'].  
+        </td>
     </tr>
     <tr>
         <td>opcional</td>
         <td>custom()</td>
+        <td></td>
     </tr>
     <tr>
         <td>opcional</td>
         <td>outputValues()</td>
+        <td></td>
     </tr>
 </table>
     
 Dê uma olhada nas implementações já existentes na pasta `../boleto-lib/bancos` para usar como exemplo.
+
+***
+### Especificação do Número Febraban.
+>Este número é a base para calcular a linha digitável e o código de barras.
+
+<table>
+    <tr>
+        <td>Posição</td>
+        <td>Quant. de Dígitos</td>
+        <td>Descrição</td>
+    </tr>
+    <tr>
+        <td>01-03</td>
+        <td>3</td>
+        <td>Código do banco sem o digito</td>
+    </tr>
+    <tr>
+        <td>04-04</td>
+        <td>1</td>
+        <td>Código da Moeda (9-Real)</td>
+    </tr>
+    <tr>
+        <td>05-05</td>
+        <td>1</td>
+        <td>Dígito verificador do código de barras</td>
+    </tr>
+    <tr>
+        <td>06-09</td>
+        <td>4</td>
+        <td>Fator de vencimento</td>
+    </tr>
+    <tr>
+        <td>10-19</td>
+        <td>10</td>
+        <td>Valor Nominal do Título</td>
+    </tr>
+    <tr>
+        <td>20-44</td>
+        <td>25</td>
+        <td>Campo Livre. Reservado aos bancos.</td>
+    </tr>
+</table>
     
 ***
 
