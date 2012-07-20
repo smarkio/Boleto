@@ -39,13 +39,12 @@ São eles:
 <table>
   <tr>
     <td>Boleto::load_boleto($argumentos = array())</td>
-    <td>output($render = TRUE)</td>
-  </tr>
-  <tr>
-    <td>Este método é usado para instanciar um novo objeto. Note que este método é chamado estaticamente.
-    </td>
     <td>Este método gera o html do boleto. Se você passar o parâmetro FALSE então somente
     a propriedade $boleto->output é populada mas o html não é gerado.</td>
+  </tr>
+  <tr>
+    <td>output($render = TRUE)</td>
+    <td>Este método é usado para instanciar um novo objeto. Note que este método é chamado estaticamente.</td>
   </tr>
 </table> 
 
@@ -104,12 +103,6 @@ Encontre exemplos na pasta `../boleto-lib/bancos/XXX/example.php`. Para ver a de
 `http://localhost/boleto-lib/bancos/XXX/example.php`
 
 Onde XXX é o código do banco.
-
-***       
-Cada banco implementado possui um script de exemplo dentro da pasta `../boleto-lib/bancos/XXX`.  
-Onde XXX é o código do banco.  
-
-Use os arquivos de examplo do(s) banco(s) que você queira integrar à sua aplicação.
 
 ## 2. REPORTANDO BUGS, PEDINDO AJUDA E FAZENDO SUGESTÕES
 
