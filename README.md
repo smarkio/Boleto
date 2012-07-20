@@ -175,10 +175,33 @@ Exemplo:
 **_3.7_** No arquivo Banco_XXX.php você deverá criar uma classe chamada Banco_XXX  que extends Boleto.  
 
 Por exemplo:  
->class Banco_237 extends Boleto{  
-   // Meu código.  
- }  
-       
+
+>A sua implementação deverá conter no mínimo o seguinte estrutura de código:
+
+        <?php
+         /**
+         * This code is released under the GNU General Public License.
+         * See COPYRIGHT.txt and LICENSE.txt.
+         *
+         * @author Fulano de Tal <fulanodetal@servidor.com>
+         */
+        
+        class Banco_XXX extends Boleto{  
+          function febraban_20to44() {
+            // Calcule as posições 20 a 44 do número febraban de acordo
+            // com as regras das carteiras do banco.
+            // ...
+        
+            // Salve o número com 25 digitos na propriedade febraban['20-44'].
+            $this->febraban['20-44'] = $numero_calculado;
+          }
+        }  
+
+
+Onde XXX em Banco_XXX é o código do banco sendo implementado.
+
+![Simpletest for Boleto PHP Library](http://a8.sphotos.ak.fbcdn.net/hphotos-ak-ash4/314778_10151042871613007_1252058544_n.jpg)
+
 ***
 
 **_3.8_** Na classe Banco_XXX que acabara de criar você precisa implementar os seguintes métodos:  
@@ -198,8 +221,8 @@ Por exemplo:
         As posições 1 a 19 é padrão para todos os bancos. As posições 20 a 44 é livre para os bancos
         armazenem as informações que quizerem e na forma que quizerem.  
         <br><br>
-        Assim, este método "febraban_20to44()" deverá construir este número com total de 15 digitos, de acordo
-        com as espeficações das carteiras do banco, e armazena-lo na propriedade<br> $this->febraban['20-44'].  
+        Assim, este método "febraban_20to44()" deverá construir este número com total de 25 digitos, de acordo
+        com as espeficações das carteiras do banco, e armazena-lo na propriedade $this->febraban['20-44'].  
         </td>
     </tr>
     <tr>
