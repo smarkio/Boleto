@@ -194,12 +194,12 @@ Por exemplo:
         <td>febraban_20to44()</td>
         <td>A linha digitável e o código de barras são calculados com base num número com 44 digitos
         chamado de especificação febraban. Veja abaixo como este número é constituido.  
-
+        <br><br>
         As posições 1 a 19 é padrão para todos os bancos. As posições 20 a 44 é livre para os bancos
         armazenem as informações que quizerem e na forma que quizerem.  
-
+        <br><br>
         Assim, este método "febraban_20to44()" deverá construir este número com total de 15 digitos, de acordo
-        com as espeficações das carteiras do banco, e armazena-lo na propriedade $this->febraban['20-44'].  
+        com as espeficações das carteiras do banco, e armazena-lo na propriedade<br> $this->febraban['20-44'].  
         </td>
     </tr>
     <tr>
