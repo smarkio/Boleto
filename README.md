@@ -1,4 +1,5 @@
 ![Boleto Library Logo](http://a6.sphotos.ak.fbcdn.net/hphotos-ak-ash3/556061_10151041426758007_738498480_n.jpg)
+[Documentação do API](http://drupalista-br.github.com/Boleto/classes/Boleto.html)
 
 # TOPICOS  
 1. [Como Usar e Integrar esta Biblioteca à Sua Aplicação](#1-como-usar--testar-a-biblioteca)
@@ -39,19 +40,17 @@ São eles:
 <table>
   <tr>
     <td>Boleto::load_boleto($argumentos = array())</td>
-    <td>Este método gera o html do boleto. Se você passar o parâmetro FALSE então somente
-    a propriedade $boleto->output é populada mas o html não é gerado.</td>
+    <td>Este método é usado para instanciar um novo objeto. Note que este método é chamado estaticamente.</td>
   </tr>
   <tr>
     <td>output($render = TRUE)</td>
-    <td>Este método é usado para instanciar um novo objeto. Note que este método é chamado estaticamente.</td>
+    <td>Este método gera o html do boleto. Se você passar o parâmetro FALSE então somente a propriedade $boleto->output é populada mas o html não é gerado.</td>
   </tr>
 </table> 
 
 >O seu código de integração deverá ter esta estrutura:
 
         <?php
-        
         $argumentos = array(
           'bank_code' => '104',
           'agencia' => 1234,
@@ -340,7 +339,7 @@ Leia também:
 http://help.github.com/send-pull-requests
    
 >2. Mais informações sobre as propriedades e métodos disponíveis na
-[Documentação API](http://drupalista-br.github.com/Boleto/classes/Boleto.html)
+[Documentação do API](http://drupalista-br.github.com/Boleto/classes/Boleto.html)
 
 ***
 
