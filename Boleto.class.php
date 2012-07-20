@@ -42,7 +42,7 @@ abstract class Boleto {
   /**
    * The relative and absolute path locations for the plugin's folder.
    */
-  static protected $plugins_folder_location = array();
+  static protected $plugin_folder_locations = array();
 
   /**
    * Hold warnings issued by the library itself and the bank issuer plugins.
@@ -787,14 +787,14 @@ abstract class Boleto {
    */
   static function installedPlugins() {
 
-    $plugins_folder_location = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'bancos';
+    $plugin_folder_locations = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'bancos';
 
-    $bank_codes = scandir($plugins_folder_location);
+    $bank_codes = scandir($plugin_folder_locations);
 
     if (is_array($bank_codes)) {
       foreach ($bank_codes as $key => $bank_code) {
         if (!ctype_alnum($bank_code) ||
-            !is_dir($plugins_folder_location . DIRECTORY_SEPARATOR . $bank_code)) {
+            !is_dir($plugin_folder_locations . DIRECTORY_SEPARATOR . $bank_code)) {
           // Remove all values that have dot(s) in it. (files and . and ..)
           unset($bank_codes[$key]);
         }
