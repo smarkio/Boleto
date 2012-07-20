@@ -188,7 +188,12 @@ Dê uma olhada nas implementações já existentes na pasta `../boleto-lib/banco
 ***
 
 ### Especificação do Número Febraban.
->Este número é a base para calcular a linha digitável e o código de barras.
+>Este número é a base para calcular a linha digitável e o código de barras.  
+
+>Você só precisa se preocupar em calcular as posições 20 ao 44.
+
+>As posições 20 a 44 é a única coisa que diferencia boletos de um banco para outro ou mesmo de
+uma carteira para outra de um mesmo banco.
 
 <table>
     <tr>
