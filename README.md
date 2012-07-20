@@ -251,9 +251,9 @@ Por exemplo:
         
         class Banco_XXX extends Boleto{  
           function febraban_20to44() {
-            // Calcule as posições 20 a 44 do número febraban de acordo
-            // os arguments em $this->arguments['agencia'] e com as regras das
-            // carteiras do banco.
+            // Calcule as posições 20 a 44 do número febraban de acordo com
+            // os argumentos em $this->arguments e com as regras da(s)
+            // carteira(s) do banco.
             // ...
         
             // Salve o número com 25 digitos na propriedade febraban['20-44'].
@@ -268,17 +268,17 @@ Onde XXX em Banco_XXX é o código do banco sendo implementado.
 
 ***
 
-**_3.6_** Uma vez que fizer o push dos seus commits, acesse `https://github.com/drupalista-br/Boleto/issues`
-e crie um issue solicitando a inserção do seu novo plugin na nossa listagem de plugins.
+**_3.6_** Uma vez que fizer o push dos seus commits, acesse https://github.com/drupalista-br/Boleto/issues
+e crie um issue solicitando a inserção do link do seu novo plugin na nossa listagem de plugins em
+https://github.com/drupalista-br/Boleto/tree/1.x-dev/bancos .
 
-Não esqueça de informar o link do seu
+Não esqueça de informar o link do seu repositório.
 
 ## 4. CONTRIBUINDO COM A BIBLIOTECA PRINCIPAL  
 
-Leia também
->1. Como Forkear um Repositório e Solicitar Pull Requests no Github: 
-   http://help.github.com/fork-a-repo e  
-   http://help.github.com/send-pull-requests
+Leia também:
+>1. Como Forkear um Repositório e Solicitar Pull Requests no Github nos links http://help.github.com/fork-a-repo e
+http://help.github.com/send-pull-requests
    
 >2. Documentação do API:  
    Precisando de um Patrocínio para hospedar o [phpDocumentor](http://www.phpdoc.org)
@@ -291,13 +291,13 @@ Leia também
 ***
 
 **_4.2_** Acesse https://github.com/drupalista-br/boleto e clique e "Fork". Feito isto o github criará um
-novo repositório em sua conta contendo uma cópia do nosso repositório Boleto.
+novo repositório em sua conta contendo uma cópia do repositório Boleto.
 
 ***
 
 **_4.3_** Agora baixe o código de sua cópia forkeada com o seguinte comando:  
 
-`$ git clone --branch 1.x-dev git@github.com:USUARIO/boleto.git boleto`  
+`$ git clone --branch 1.x-dev git@github.com:USUARIO/boleto.git boleto-lib`  
 
 Onde USUARIO deverá ser substituido pelo seu usuario no Github.  
 
@@ -310,10 +310,10 @@ o seu repositório forkeado. Aqui vão os comandos:
 `$ git commit -m "Sua mensagem explicando o que foi feito"`  
 `$ git push origin 1.x-dev`  
 
-A partir de agora o seu repositório forkeado possue um código diferente do nosso repositório o qual você
+A partir de agora o seu repositório forkeado possue um código diferente do repositório Boleto o qual você
 inicialmente fez uma cópia.
 
-O próximo passo mostra como mergir as suas alterações para o nosso repositíro.
+O próximo passo mostra como mergir as suas alterações para o repositíro Boleto.
 
 ***
 
@@ -326,12 +326,12 @@ Uma vez que o seu código for analisado, uma das seguintes ações poderão ser 
 1. O seu pull request é aceito e o seu código é mergido ou
 2. Poderá ser solicitado que você faça algum ajuste antes que o pull request seja aceito. Neste caso basta repetir
 o processo do passo 4.3 e o github automaticamente insere o seu novo commit no pull request.
-3. Ou o seu pull request é recusado e o issue é fechado. Neste caso será argumentado as razões a recusa.
+3. Ou o seu pull request é recusado e o issue é fechado. Neste caso será argumentado as razões da recusa.
 
 ***
 
 **_4.6_** Caso você queira por exemplo alterar ou adicionar uma nova carteira à um plugin de banco já existente
-você deverá seguir os passos 4.1 ao 4.4, entretanto no passo 4.2 você irá forkear o repositório do plugin do banco
+você deverá seguir os passos 4.1 ao 4.5, entretanto no passo 4.2 você irá forkear o repositório do plugin do banco
 em questão ao invés de forkear o repositório do Boleto.  
 
 Vale lembrar ainda que o passo 4.3 deverá ser feito dentro da pasta `../boleto/bancos` e a subpasta do repositório
