@@ -56,7 +56,10 @@ São eles:
   </tr>
 </table>
 
->O seu código de integração deverá ter esta estrutura:
+* O seu código de integração deverá ter esta estrutura:
+>Note que apesar de todos os possíveis valores dos argumentos estarem listados abaixo, nem sempre você precisa
+enviar todos eles, veja a documentação de cada plugin para determinar o que obrigatoriamente precisa ser
+enviado.
 
         <?php
         $argumentos = array(
