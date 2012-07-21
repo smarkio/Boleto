@@ -1,5 +1,4 @@
 ![Boleto Library Logo](http://a6.sphotos.ak.fbcdn.net/hphotos-ak-ash3/556061_10151041426758007_738498480_n.jpg)
-[Documentação do API](http://drupalista-br.github.com/Boleto/classes/Boleto.html)
 
 # TOPICOS  
 1. [Como Usar e Integrar esta Biblioteca à Sua Aplicação](#1-como-usar--testar-a-biblioteca)
@@ -36,17 +35,26 @@ ou faça o Download da última versão estável do plugin em https://github.com/
 
 **_1.3_** Para integrar esta biblioteca a qualquer aplicação PHP você precisará usar apenas dois métodos.
 São eles:
+>Para mais informações sobre todos os métodos setters and getters disponíveis, acesse a
+[Documentação do API](http://drupalista-br.github.com/Boleto/classes/Boleto.html)
 
 <table>
   <tr>
     <td>Boleto::load_boleto($argumentos = array())</td>
-    <td>Este método é usado para instanciar um novo objeto. Note que este método é chamado estaticamente.</td>
+    <td>Este método é usado para instanciar um novo objeto.<br>Note que este método é chamado estaticamente.</td>
   </tr>
   <tr>
     <td>output($render = TRUE)</td>
-    <td>Este método gera o html do boleto. Se você passar o parâmetro FALSE então somente a propriedade $boleto->output é populada mas o html não é gerado.</td>
+    <td>Este método gera o html do boleto.
+      <br>
+      <br>Se você passar o parâmetro FALSE então
+      <br>somente a propriedade $boleto->output é populada mas o html não é gerado.<br>
+          Neste caso use o método outputPropertyGetter() para salvar o output<br>
+          em uma variável. Por exemplo:<br>
+          $output = $boleto->outputPropertyGetter();
+    </td>
   </tr>
-</table> 
+</table>
 
 >O seu código de integração deverá ter esta estrutura:
 
