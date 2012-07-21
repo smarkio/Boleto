@@ -776,10 +776,10 @@ abstract class Boleto {
   }
 
   /**
-   * Scan for installed bank plugins.
+   * Scan for correctly installed bank plugins.
    *
    * @return Array
-   *   An array of bank codes.
+   *   An array list of all bank code plugins installed.
    */
   static function installedPlugins() {
 
@@ -794,13 +794,30 @@ abstract class Boleto {
           // Remove all values that have dot(s) in it. (files and . and ..)
           unset($bank_codes[$key]);
         }
+        else {
+          $bank_class_file = $plugin_folder_locations . DIRECTORY_SEPARATOR . $bank_code . DIRECTORY_SEPARATOR . "Banco_$bank_code" . ".php";
+
+          if (file_exists($bank_class_file)) {
+            include_once $bank_class_file;
+
+            if (!method_exists("Banco_$bank_code", 'febraban_20to44')) {
+              // The plugin class does not have the required method.
+              unset($bank_codes[$key]);
+            }
+          }
+          else {
+            // The plugin class file is not present.
+            unset($bank_codes[$key]);
+          }
+        }
       }
     }
     else {
       $bank_codes = array();
     }
 
-    return $bank_codes;
+    // Sorts the array keys sequentially and returns it.
+    return array_values($bank_codes);
   }
 
   /**

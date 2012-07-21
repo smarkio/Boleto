@@ -62,6 +62,9 @@ enviar todos eles, veja a documentação de cada plugin para determinar o que ob
 enviado.
 
         <?php
+        
+        include_once '../boleto-lib/Boleto.class.php';
+        
         $argumentos = array(
           'bank_code' => '104',
           'agencia' => 1234,
@@ -103,9 +106,17 @@ enviado.
           'aceite'=> 'Your value here',
           'merchant_logo' => 'images/logo.jpg',
         );
+
+        if (in_array($argumentos['bank_code'], Boleto::installedPlugins())) {
+          // Instancia e o objeto.
+          $boleto = Boleto::load_boleto($argumentos);
+          // Imprime o boleto.
+          $boleto->output();
+        }
+        else {
+          // Seu error handler.
+        }
         
-        $boleto = Boleto::load_boleto($argumentos);
-        $boleto->output();
 
 
 Encontre exemplos na pasta `../boleto-lib/bancos/XXX/example.php`. Para ver a demonstração acesse:  
@@ -113,6 +124,18 @@ Encontre exemplos na pasta `../boleto-lib/bancos/XXX/example.php`. Para ver a de
 `http://localhost/boleto-lib/bancos/XXX/example.php`
 
 Onde XXX é o código do banco.
+
+### Antes de instancializar um objeto talvés seja interessante a sua aplicação verificar se:
+
+1. Existe pelo menos um plugin de banco instalado
+2. Os plugins de bancos presentes estão instalados corretamente e
+3. Saber quais são os plugins de bancos que estão presentes e corretamente instalados.
+
+Para isto existe o método `Boleto::installedPlugins()` que retorna uma array com os códigos dos bancos
+os quais possuem plugin corretamente instalados.
+
+>Note que este método é estático pois você precisará executa-lo antes de instanciar
+o objeto, como demonstrado no código de exemplo acima.
 
 ## 2. REPORTANDO BUGS, PEDINDO AJUDA E FAZENDO SUGESTÕES
 
