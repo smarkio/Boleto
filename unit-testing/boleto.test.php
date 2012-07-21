@@ -87,6 +87,46 @@ abstract class BoletoTestCase extends UnitTestCase {
     }
   }
 
+  function testFebraban1to3PropertyIsNumericAndHas3Digits() {
+    foreach($this->boletoObject as $test_case_obj) {
+      $febraban = $test_case_obj->febrabanPropertyGetter();
+      $this->assertTrue(is_numeric($febraban['1-3']));
+      $this->assertTrue(strlen($febraban['1-3']) == 3);
+    }
+  }
+
+  function testFebraban4to4PropertyIsNumericAndHas1Digits() {
+    foreach($this->boletoObject as $test_case_obj) {
+      $febraban = $test_case_obj->febrabanPropertyGetter();
+      $this->assertTrue(is_numeric($febraban['4-4']));
+      $this->assertTrue(strlen($febraban['4-4']) == 1);
+    }
+  }
+
+  function testFebraban5to5PropertyIsNumericAndHas1Digits() {
+    foreach($this->boletoObject as $test_case_obj) {
+      $febraban = $test_case_obj->febrabanPropertyGetter();
+      $this->assertTrue(is_numeric($febraban['5-5']));
+      $this->assertTrue(strlen($febraban['5-5']) == 1);
+    }
+  }
+
+  function testFebraban6to9PropertyIsNumericAndHas4Digits() {
+    foreach($this->boletoObject as $test_case_obj) {
+      $febraban = $test_case_obj->febrabanPropertyGetter();
+      $this->assertTrue(is_numeric($febraban['6-9']));
+      $this->assertTrue(strlen($febraban['6-9']) == 4);
+    }
+  }
+
+  function testFebraban10to19PropertyIsNumericAndHas10Digits() {
+    foreach($this->boletoObject as $test_case_obj) {
+      $febraban = $test_case_obj->febrabanPropertyGetter();
+      $this->assertTrue(is_numeric($febraban['10-19']));
+      $this->assertTrue(strlen($febraban['10-19']) == 10);
+    }
+  }
+
   function testFebraban20to44PropertyIsNumericAndHas25Digits() {
     foreach($this->boletoObject as $test_case_obj) {
       $febraban = $test_case_obj->febrabanPropertyGetter();
