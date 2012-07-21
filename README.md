@@ -108,13 +108,13 @@ enviado.
         );
 
         if (in_array($argumentos['bank_code'], Boleto::installedPlugins())) {
-          // Instancia e o objeto.
+          // Instancia o objeto.
           $boleto = Boleto::load_boleto($argumentos);
           // Imprime o boleto.
           $boleto->output();
         }
         else {
-          // Seu error handler.
+          // Seu error handler pois o plugin do banco não está instalado.
         }
         
 
@@ -125,7 +125,7 @@ Encontre exemplos na pasta `../boleto-lib/bancos/XXX/example.php`. Para ver a de
 
 Onde XXX é o código do banco.
 
-### Antes de instancializar um objeto talvés seja interessante a sua aplicação verificar se:
+### Antes de instanciar um objeto talvés seja interessante a sua aplicação verificar se:
 
 1. Existe pelo menos um plugin de banco instalado
 2. Os plugins de bancos presentes estão instalados corretamente e
