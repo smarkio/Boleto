@@ -186,9 +186,10 @@ abstract class Boleto {
    */
   public static function load_boleto($arguments = array()) {
     $bank_code = trim($arguments['bank_code']);
-    $plugin_location = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'bancos' . DIRECTORY_SEPARATOR . $bank_code . DIRECTORY_SEPARATOR. 'Banco_' . $bank_code . '.php';
-    
-    if (@file_exists($plugin_location) ) {
+
+    if (in_array($bank_code, Boleto::installedPlugins())) {
+      $plugin_location = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'bancos' . DIRECTORY_SEPARATOR . $bank_code . DIRECTORY_SEPARATOR. 'Banco_' . $bank_code . '.php';
+
       // Include the bank plugin.
       include_once $plugin_location;
       // Set the plugin class name.
@@ -468,7 +469,7 @@ abstract class Boleto {
 
     // Concatenates bankCode + currencyCode + first block of 5 characters and
     // calculates its check digit for part1.
-    $checkDigit = $this->modulo_10($this->bank_code. $this->febraban['4-4'] . $blocks['20-24']);
+    $checkDigit = $this->modulo_10($this->bank_code . $this->febraban['4-4'] . $blocks['20-24']);
 
     // Shift in a dot on block 20-24 (5 characters) at its 2nd position.
     $blocks['20-24'] = substr_replace($blocks['20-24'], '.', 1, 0);
@@ -771,7 +772,7 @@ abstract class Boleto {
    */
   protected function constructObject() {
     foreach($this->startUp as $methodName) {
-      $this->$methodName();
+      $this->{$methodName}();
     }
   }
 
@@ -797,7 +798,7 @@ abstract class Boleto {
         else {
           $bank_class_file = $plugin_folder_locations . DIRECTORY_SEPARATOR . $bank_code . DIRECTORY_SEPARATOR . "Banco_$bank_code" . ".php";
 
-          if (file_exists($bank_class_file)) {
+          if (@file_exists($bank_class_file)) {
             include_once $bank_class_file;
 
             if (!method_exists("Banco_$bank_code", 'febraban_20to44')) {

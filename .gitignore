@@ -3,3 +3,4 @@ unit-testing/simpletest/*
 bancos/*
 !bancos/*.txt
 !bancos/*.md
+imagens/logo-large.png
