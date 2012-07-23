@@ -375,7 +375,7 @@ plugin. Por exemplo:
 
 ***
 
-**_3.8_** Feito os releases ( tags ), acesse https://github.com/drupalista-br/Boleto/issues
+**_3.8_** Feito o release ( tag ), acesse https://github.com/drupalista-br/Boleto/issues
 e crie um issue solicitando a inserção do link do seu novo plugin na nossa listagem de plugins em
 https://github.com/drupalista-br/Boleto/tree/1.x-dev/bancos .
 
