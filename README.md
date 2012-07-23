@@ -21,9 +21,10 @@ ou faça o Download da última versão estável em https://github.com/drupalista
 
 1. `$ cd boleto-lib`  
 2. `$ cd bancos`  
-3. `$ git clone --branch 1.x-dev https://github.com/drupalista-br/Boleto-XXX.git XXX`  
+3. `$ git clone --branch 1.x-dev https://github.com/USUARIO/Boleto-XXX.git XXX`  
 
-Onde XXX deverá ser substituido pelo código do Banco.  
+Onde XXX deverá ser substituido pelo código do Banco e USUARIO ser substituido pelo nome do usuário
+que é o mantenedor do plugin do banco.
 
 ou faça o Download da última versão estável do plugin em https://github.com/drupalista-br/Boleto/tree/1.x-dev/bancos e:  
          

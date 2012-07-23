@@ -253,10 +253,10 @@ abstract class Boleto {
         $fator = 2;
       }
     }
-		
+
     $resto  = $numtotal10 % 10;
     $digito = 10 - $resto;
-    
+
     // Make it zero if check digit is 10.
     $digito = ($digito == 10) ? 0 : $digito;
 
@@ -777,7 +777,7 @@ abstract class Boleto {
   }
 
   /**
-   * Scan for correctly installed bank plugins.
+   * Scan for correctly installed bank plugins. Must be called statically.
    *
    * @return Array
    *   An array list of all bank code plugins installed.
@@ -893,7 +893,7 @@ abstract class Boleto {
       }
     }
 
-    // Reconstruct the object again.
+    // Reconstruct the object.
     $this->constructObject();
   }
 
