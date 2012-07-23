@@ -360,12 +360,26 @@ Onde XXX em Banco_XXX é o código do banco sendo implementado.
 ![Simpletest for Boleto PHP Library](http://a5.sphotos.ak.fbcdn.net/hphotos-ak-snc6/251968_10151043011668007_369008859_n.jpg)
 
 ***
+**_3.6_** Recomenda-se que você nomeie o branch do seu repositório para 1.x-1.x-dev ao invés de master.  
 
-**_3.6_** Uma vez que fizer o push dos seus commits, acesse https://github.com/drupalista-br/Boleto/issues
+Ou seja, o primeiro 1.x refere-se à versão da biblioteca boleto a qual o seu plugin suporta e o segundo 1.x
+refere-se à versão do seu plugin.
+
+***
+
+**_3.7_** Uma vez que fizer o push dos seus commits, crie também marcações ( tags ) das versões estáveis do seu
+plugin. Por exemplo:  
+
+1. `$ git tag v1.x-1.0 -m "Beta1"`  
+2. `$ git push origin v1.x-1.0`  
+
+***
+
+**_3.8_** Feito os releases ( tags ), acesse https://github.com/drupalista-br/Boleto/issues
 e crie um issue solicitando a inserção do link do seu novo plugin na nossa listagem de plugins em
 https://github.com/drupalista-br/Boleto/tree/1.x-dev/bancos .
 
-Não esqueça de informar o link do seu repositório.
+Não esqueça de informar o link para as tags do seu repositório.
 
 ## 4. CONTRIBUINDO COM A BIBLIOTECA PRINCIPAL  
 
