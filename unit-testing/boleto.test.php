@@ -53,6 +53,12 @@ abstract class BoletoTestCase extends UnitTestCase {
     }
   }
 
+  function testPluginShouldNotCrashWhenOnlyTheBankCodeArgumentIsSent () {
+    foreach (Boleto::installedPlugins() as $bank_code) {
+      $this->assertTrue(is_object(Boleto::load_boleto(array('bank_code' => $bank_code))));
+    }
+  }
+
   function testPluginSimpleTestClassExists() {
     $bank_code = $this->mockingArguments[0]['bank_code'];
     $this->assertTrue(class_exists("TestOf$bank_code"));
@@ -175,5 +181,13 @@ abstract class BoletoTestCase extends UnitTestCase {
 
   function testPluginExampleFileExists() {
     $this->assertTrue(file_exists("../example.php"));
+  }
+
+  function testTheBankNamePropertyWasSet() {
+    foreach (Boleto::installedPlugins() as $bank_code) {
+      $bank = Boleto::load_boleto(array('bank_code' => $bank_code));
+      $bank_name_default = 'O plugin desde banco não informou o nome do banco. Entre em contato com o administrador do plugin.';
+      $this->assertNotEqual($bank->bankNamePropertyGetter(), $bank_name_default);
+    }
   }
 }

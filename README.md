@@ -342,7 +342,11 @@ Por exemplo:
          * @author Fulano de Tal <fulanodetal@servidor.com>
          */
         
-        class Banco_XXX extends Boleto{  
+        class Banco_XXX extends Boleto{
+          function setUp(){
+            $this->bank_name  = 'Nome do Banco Sendo Implementado';
+          }
+
           function febraban_20to44() {
             // Calcule as posições 20 a 44 do número febraban de acordo com
             // os argumentos em $this->arguments e com as regras da(s)

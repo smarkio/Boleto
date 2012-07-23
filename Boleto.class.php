@@ -512,7 +512,7 @@ abstract class Boleto {
    * Pre settting.
    */
   protected function settings(){
-    $this->bank_name = 'Ops!!! Aparentemente o banco informado nao esta implementado. No juice for you.';
+    $this->bank_name = 'O plugin desde banco não informou o nome do banco. Entre em contato com o administrador do plugin.';
     $this->settings['bank_logo'] = self::IMAGES_FOLDER . 'bank_logo_default.jpg';
     $this->settings['style'] = '..' . DIRECTORY_SEPARATOR . 'style.css';
     $this->settings['template'] = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'boleto.tpl.php';
@@ -831,7 +831,7 @@ abstract class Boleto {
    *  Whether or not the current warning should be added to the warning
    *  parameter
    */  
-  private function setWarning($message, $action = TRUE){
+  public function setWarning($message, $action = TRUE){
     if ($action){
       $this->warnings[$message[0]][] = $message[1];
     }
