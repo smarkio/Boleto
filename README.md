@@ -112,9 +112,12 @@ $argumentos = array(
   'merchant_logo' => 'images/logo.jpg',
 );
 
-if (in_array($argumentos['bank_code'], Boleto::installedPlugins())) {
-  // Instancia o objeto.
-  $boleto = Boleto::load_boleto($argumentos);
+
+// Instancia o objeto.
+$boleto = Boleto::load_boleto($argumentos);
+
+// Verifica se tudo correu bem.
+if (is_object($boleto)) {
   // Imprime o boleto.
   $boleto->output();
 }
