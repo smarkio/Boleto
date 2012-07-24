@@ -1,6 +1,6 @@
 ![Boleto Library Logo](http://a6.sphotos.ak.fbcdn.net/hphotos-ak-ash3/556061_10151041426758007_738498480_n.jpg)
 
-# TOPICOS  
+# TOPICOS - Boleto Library PHP  
 1. [Como Usar e Integrar esta Biblioteca à Sua Aplicação](#1-como-usar--testar-a-biblioteca)
 2. [Reportando Bugs, Pedindo Ajuda e Fazendo Sugestões](#2-reportando-bugs-pedindo-ajuda-e-fazendo-sugest%C3%95es)
 3. [Implementando novos Bancos e Carteiras](#3-implementando-novos-bancos-e-carteiras)
