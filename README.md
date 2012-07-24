@@ -121,7 +121,7 @@ if (is_object($boleto)) {
   $boleto->output();
 }
 else {
-  // Seu error handler pois o plugin do banco não está instalado.
+  // Seu error handler pois algo deu errado.
 }
 ```
 
