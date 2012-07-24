@@ -58,6 +58,7 @@ São eles:
 </table>
 
 * O seu código de integração deverá ter esta estrutura:
+
 >Note que apesar de todos os possíveis valores dos argumentos estarem listados abaixo, nem sempre você precisa
 enviar todos eles, veja a documentação de cada plugin para determinar o que obrigatoriamente precisa ser
 enviado.  
@@ -489,6 +490,7 @@ Para que os seus métodos de teste sejam chamados você deverá colocar o prefix
 Por Exemplo:
 
 ```php
+<?php
 function testNomeExplicativoDoMeuTesteNoFormatoDesteExemplo() {  
    // testes aqui.  
 }
