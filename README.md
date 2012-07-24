@@ -112,7 +112,6 @@ $argumentos = array(
   'merchant_logo' => 'images/logo.jpg',
 );
 
-
 // Instancia o objeto.
 $boleto = Boleto::load_boleto($argumentos);
 
@@ -141,8 +140,7 @@ Onde XXX é o código do banco.
 Para isto existe o método `Boleto::installedPlugins()` que retorna uma array com os códigos dos bancos
 os quais possuem plugin corretamente instalados.
 
->Note que este método é estático pois você precisará executa-lo antes de instanciar
-o objeto, como demonstrado no código de exemplo acima.
+>Note que este método deve ser chamado estáticamente.
 
 ## 2. REPORTANDO BUGS, PEDINDO AJUDA E FAZENDO SUGESTÕES
 
