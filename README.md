@@ -60,7 +60,9 @@ São eles:
 * O seu código de integração deverá ter esta estrutura:
 >Note que apesar de todos os possíveis valores dos argumentos estarem listados abaixo, nem sempre você precisa
 enviar todos eles, veja a documentação de cada plugin para determinar o que obrigatoriamente precisa ser
-enviado.
+enviado.  
+
+> Faça o download do exemplo abaixo em https://gist.github.com/3167145  
 
         <?php
         
@@ -117,7 +119,6 @@ enviado.
         else {
           // Seu error handler pois o plugin do banco não está instalado.
         }
-        
 
 
 Encontre exemplos na pasta `../boleto-lib/bancos/XXX/example.php`. Para ver a demonstração acesse:  
@@ -209,7 +210,9 @@ será usado. Veja a implementação do Banco do Brasil como exemplo</td>
     
 ***
 
-**_3.3_**  O arquivo `unit-testing/simpletest.php` deverá conter no mínimo o seguinte código:  
+**_3.3_**  O arquivo `unit-testing/simpletest.php` deverá conter no mínimo o seguinte código:
+
+>Faça o download do exemplo abaixo em https://gist.github.com/3167313  
 
         <?php
         /**
@@ -328,9 +331,9 @@ uma carteira para outra de um mesmo banco.
     
 ***
 
-**_3.5_** No arquivo Banco_XXX.php você deverá criar uma classe chamada Banco_XXX  que extends Boleto.  
+**_3.5_** No arquivo `Banco_XXX.php` você deverá criar uma classe chamada `Banco_XXX`  que extends Boleto.  
 
-Por exemplo:  
+>Faça o download do exemplo abaixo em https://gist.github.com/3167333  
 
 >A sua implementação deverá conter no mínimo o seguinte estrutura de código:
 
