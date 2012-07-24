@@ -131,7 +131,9 @@ Encontre exemplos na pasta `../boleto-lib/bancos/XXX/example.php`. Para ver a de
 
 Onde XXX é o código do banco.
 
-* Outro exemplo de como usar o seu html template customizado:  
+* Outro exemplo de como usar o seu próprio html template customizado:
+
+>Faça o download deste example em https://gist.github.com/3167695  
 
 ```php
 <?php
