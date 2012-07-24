@@ -64,62 +64,63 @@ enviado.
 
 > Faça o download do exemplo abaixo em https://gist.github.com/3167145  
 
-        <?php
-        
-        include_once '../boleto-lib/Boleto.class.php';
-        
-        $argumentos = array(
-          'bank_code' => '104',
-          'agencia' => 1234,
-          'agencia_dv' => '2',
-          'conta' => 12345678901,
-          'conta_dv' => 3,
-          'valor_boleto' => '2952.95',
-          'numero_documento' => '27030195',
-          'endereco' => 'street name and number',
-          'cidade_uf'=> 'city and state',
-          'cedente'  => 'ABC Company Ltd',
-          'sacado' => 'John Doe',
-          'carteira' => 'A',
-          'carteira_nosso_numero' => '80',
-          'nosso_numero' => '12345678',
-          'cpf_cnpj' => '000.000.000-00', 
-          'endereco1' => 'street name and number',
-          'endereco2' => 'city and state',
-          'demonstrativo1' => 'Your text here',
-          'demonstrativo2' => 'Your text here',
-          'demonstrativo3' => 'Your text here',
-          'instrucoes1' => 'Your text here',
-          'instrucoes2' => 'Your text here',
-          'instrucoes3' => 'Your text here',
-          'instrucoes4' => 'Your text here',
-          'data_vencimento' => '25-07-2011',
-          'desconto_abatimento' => '0.00',
-          'outras_deducoes' => '0.00',
-          'mora_multa' => '0.00',
-          'outros_acrescimos' => '50.55',
-          'title' => 'My title',
-          'local_pagamento' => 'Your text here',
-          'especie' => 'Your value here',
-          'quantidade' => 'Your value here',
-          'valor_unitario' => 'Your value here',
-          'especie_doc' => 'Your value here',
-          'data_processamento' => 'dd/mm/yyy',
-          'avalista' => 'Michael Jackson',
-          'aceite'=> 'Your value here',
-          'merchant_logo' => 'images/logo.jpg',
-        );
+```php
+<?php
 
-        if (in_array($argumentos['bank_code'], Boleto::installedPlugins())) {
-          // Instancia o objeto.
-          $boleto = Boleto::load_boleto($argumentos);
-          // Imprime o boleto.
-          $boleto->output();
-        }
-        else {
-          // Seu error handler pois o plugin do banco não está instalado.
-        }
+include_once '../boleto-lib/Boleto.class.php';
 
+$argumentos = array(
+  'bank_code' => '104',
+  'agencia' => 1234,
+  'agencia_dv' => '2',
+  'conta' => 12345678901,
+  'conta_dv' => 3,
+  'valor_boleto' => '2952.95',
+  'numero_documento' => '27030195',
+  'endereco' => 'street name and number',
+  'cidade_uf'=> 'city and state',
+  'cedente'  => 'ABC Company Ltd',
+  'sacado' => 'John Doe',
+  'carteira' => 'A',
+  'carteira_nosso_numero' => '80',
+  'nosso_numero' => '12345678',
+  'cpf_cnpj' => '000.000.000-00', 
+  'endereco1' => 'street name and number',
+  'endereco2' => 'city and state',
+  'demonstrativo1' => 'Your text here',
+  'demonstrativo2' => 'Your text here',
+  'demonstrativo3' => 'Your text here',
+  'instrucoes1' => 'Your text here',
+  'instrucoes2' => 'Your text here',
+  'instrucoes3' => 'Your text here',
+  'instrucoes4' => 'Your text here',
+  'data_vencimento' => '25-07-2011',
+  'desconto_abatimento' => '0.00',
+  'outras_deducoes' => '0.00',
+  'mora_multa' => '0.00',
+  'outros_acrescimos' => '50.55',
+  'title' => 'My title',
+  'local_pagamento' => 'Your text here',
+  'especie' => 'Your value here',
+  'quantidade' => 'Your value here',
+  'valor_unitario' => 'Your value here',
+  'especie_doc' => 'Your value here',
+  'data_processamento' => 'dd/mm/yyy',
+  'avalista' => 'Michael Jackson',
+  'aceite'=> 'Your value here',
+  'merchant_logo' => 'images/logo.jpg',
+);
+
+if (in_array($argumentos['bank_code'], Boleto::installedPlugins())) {
+  // Instancia o objeto.
+  $boleto = Boleto::load_boleto($argumentos);
+  // Imprime o boleto.
+  $boleto->output();
+}
+else {
+  // Seu error handler pois o plugin do banco não está instalado.
+}
+```
 
 Encontre exemplos na pasta `../boleto-lib/bancos/XXX/example.php`. Para ver a demonstração acesse:  
 
@@ -214,36 +215,35 @@ será usado. Veja a implementação do Banco do Brasil como exemplo</td>
 
 >Faça o download do exemplo abaixo em https://gist.github.com/3167313  
 
-        <?php
-        /**
-        * @file
-        * Unit testing.
-        */
-        
-        require_once "../../../unit-testing/boleto.test.php";
-        
-        class TestOfXXX extends BoletoTestCase{
-          protected $mockingArguments;
-        
-          function mockingArguments() {
-            $this->mockingArguments = array(
-              array(
-                // Argumentos do Primeiro test case.
-              ),
-              array(
-                // Argumentos do Segundo test case.
-              ),
-              // E assim por diante. Dê uma olhada no simpletest.php do
-              // Banco do Brasil para um exemplo com mais de um test case.
-            );
-          }
-        }
+```php
+<?php
+/**
+* @file
+* Unit testing.
+*/
 
+require_once "../../../unit-testing/boleto.test.php";
+
+class TestOfXXX extends BoletoTestCase{
+  protected $mockingArguments;
+
+  function mockingArguments() {
+    $this->mockingArguments = array(
+      array(
+        // Argumentos do Primeiro test case.
+      ),
+      array(
+        // Argumentos do Segundo test case.
+      ),
+      // E assim por diante. Dê uma olhada no simpletest.php do
+      // Banco do Brasil para um exemplo com mais de um test case.
+    );
+  }
+}
+```
 
 Onde XXX em TestOfXXX é o código do banco.  
-Exemplo:
 
-![Sample code for Simpletest](http://a1.sphotos.ak.fbcdn.net/hphotos-ak-prn1/532436_10151041714503007_978552871_n.jpg)
 ***
 
 **_3.4_** Na classe Banco_XXX que acabara de criar você precisa implementar os seguintes métodos:  
@@ -337,34 +337,33 @@ uma carteira para outra de um mesmo banco.
 
 >A sua implementação deverá conter no mínimo o seguinte estrutura de código:
 
-        <?php
-         /**
-         * This code is released under the GNU General Public License.
-         * See COPYRIGHT.txt and LICENSE.txt.
-         *
-         * @author Fulano de Tal <fulanodetal@servidor.com>
-         */
-        
-        class Banco_XXX extends Boleto{
-          function setUp(){
-            $this->bank_name  = 'Nome do Banco Sendo Implementado';
-          }
+```php
+<?php
+ /**
+ * This code is released under the GNU General Public License.
+ * See COPYRIGHT.txt and LICENSE.txt.
+ *
+ * @author Fulano de Tal <fulanodetal@servidor.com>
+ */
 
-          function febraban_20to44() {
-            // Calcule as posições 20 a 44 do número febraban de acordo com
-            // os argumentos em $this->arguments e com as regras da(s)
-            // carteira(s) do banco.
-            // ...
-        
-            // Salve o número com 25 digitos na propriedade febraban['20-44'].
-            $this->febraban['20-44'] = $numero_calculado;
-          }
-        }  
+class Banco_XXX extends Boleto{
+  function setUp(){
+    $this->bank_name  = 'Nome do Banco Sendo Implementado';
+  }
 
+  function febraban_20to44() {
+    // Calcule as posições 20 a 44 do número febraban de acordo com
+    // os argumentos em $this->arguments e com as regras da(s)
+    // carteira(s) do banco.
+    // ...
+
+    // Salve o número com 25 digitos na propriedade febraban['20-44'].
+    $this->febraban['20-44'] = $numero_calculado;
+  }
+}  
+```
 
 Onde XXX em Banco_XXX é o código do banco sendo implementado.
-
-![Simpletest for Boleto PHP Library](http://a5.sphotos.ak.fbcdn.net/hphotos-ak-snc6/251968_10151043011668007_369008859_n.jpg)
 
 ***
 **_3.6_** Recomenda-se que você nomeie o branch do seu repositório para 1.x-1.x-dev ao invés de master.  
@@ -489,9 +488,11 @@ Para que os seus métodos de teste sejam chamados você deverá colocar o prefix
 
 Por Exemplo:
 
-        function testNomeExplicativoDoMeuTesteNoFormatoDesteExemplo() {  
-           // testes aqui.  
-        }  
+```php
+function testNomeExplicativoDoMeuTesteNoFormatoDesteExemplo() {  
+   // testes aqui.  
+}
+```
 
 Mais exemplos em http://www.simpletest.org/en/first_test_tutorial.html e também no arquivo
 `../boleto-lib/unit-testing/boleto.test.php`
