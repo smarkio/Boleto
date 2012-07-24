@@ -131,6 +131,35 @@ Encontre exemplos na pasta `../boleto-lib/bancos/XXX/example.php`. Para ver a de
 
 Onde XXX é o código do banco.
 
+* Outro exemplo de como usar o seu html template customizado:  
+
+```php
+<?php
+
+include_once 'boleto-lib/Boleto.class.php';
+
+$argumentos = array(
+  // Argumentos aqui.
+);
+
+// Instancia o objeto.
+$boleto = Boleto::load_boleto($argumentos);
+
+// Verifica se tudo correu bem.
+if (is_object($boleto)) {
+  // Use o arquivo boleto.tpl.php como exemplo para criar o seu template customizado.
+  $settings = array('template' => 'minha_pasta/meu_layout_template.php');
+
+  // Informa ao objeto a localização do seu template customizado.
+  $boleto->settingsPropertySetter($settings);
+
+  // Imprime o boleto.
+  $boleto->output();
+else {
+  // Seu error handler pois algo deu errado.
+}
+```
+
 ### Antes de instanciar um objeto talvés seja interessante a sua aplicação verificar se:
 
 1. Existe pelo menos um plugin de banco instalado
