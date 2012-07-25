@@ -1,591 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a7" title="">
-  <file path="bancos/237/Banco_237.php" hash="5474b6449d63e0b98452135ebec9569a" package="Default">
-    <class final="false" abstract="false" namespace="global" line="9" package="Default">
-      <extends>\Boleto</extends>
-      <name>Banco_237</name>
-      <full_name>\Banco_237</full_name>
-      <docblock line="2">
-        <description><![CDATA[This code is released under the GNU General Public License.]]></description>
-        <long-description><![CDATA[<p>See COPYRIGHT.txt and LICENSE.txt.</p>]]></long-description>
-        <tag line="2" name="author" description="Francisco Luz &lt;franciscoferreiraluz@yahoo.com.au&gt;"/>
-      </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
-        <name>setUp</name>
-        <full_name>setUp</full_name>
-        <docblock line="10">
-          <description><![CDATA[Implementation of setUp().]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
-        <name>febraban_20to44</name>
-        <full_name>febraban_20to44</full_name>
-        <docblock line="17">
-          <description><![CDATA[Implementation of Febraban free range set from position 20 to 44.]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="42" package="Default">
-        <name>custom</name>
-        <full_name>custom</full_name>
-        <docblock line="39">
-          <description><![CDATA[Customize object to meet specific needs.]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="56" package="Default">
-        <name>outputValues</name>
-        <full_name>outputValues</full_name>
-        <docblock line="53">
-          <description><![CDATA[Manipulate output fields before them getting rendered.]]></description>
-          <long-description><![CDATA[<p>This method is called by output().</p>]]></long-description>
-        </docblock>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/237/Banco_237.php</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/237/unit-testing/simpletest.php" hash="27f1db4352ad64db490b4cf293606a2c" package="Default">
-    <include line="7" type="Require Once" package="Default">
-      <name>../../../unit-testing/boleto.test.php</name>
-      <docblock line="2">
-        <description><![CDATA[]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="2" name="file" description="Unit testing."/>
-      </docblock>
-    </include>
-    <class final="false" abstract="false" namespace="global" line="9" package="Default">
-      <extends>\BoletoTestCase</extends>
-      <name>TestOf237</name>
-      <full_name>\TestOf237</full_name>
-      <property final="false" static="false" visibility="protected" line="10" namespace="global" package="Default">
-        <name>$mockingArguments</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
-        <name>mockingArguments</name>
-        <full_name>mockingArguments</full_name>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/237/unit-testing/simpletest.php</error>
-      <error line="9" code="50000">No DocBlock was found for \TestOf237</error>
-      <error line="10" code="50018">No DocBlock was found for property $mockingArguments</error>
-      <error line="12" code="50010">No DocBlock was found for method mockingArguments()</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/237/example.php" hash="f1db41d4a8d1481d01565c6529e2a32b" package="Default">
-    <docblock line="2">
-      <description><![CDATA[This code is released under the GNU General Public License.]]></description>
-      <long-description><![CDATA[<p>See COPYRIGHT.txt and LICENSE.txt.</p>]]></long-description>
-      <tag line="2" name="author" description="Francisco Luz &lt;franciscoferreiraluz@yahoo.com.au&gt;"/>
-    </docblock>
-    <include line="12" type="Include Once" package="Default">
-      <name>../../Boleto.class.php</name>
-      <docblock line="9">
-        <description><![CDATA[Include the main boleto class file.]]></description>
-        <long-description><![CDATA[]]></long-description>
-      </docblock>
-    </include>
-  </file>
-  <file path="bancos/341/unit-testing/simpletest.php" hash="a45e88fa012c6284bc6c3dbe99442ef9" package="Default">
-    <include line="7" type="Require Once" package="Default">
-      <name>../../../unit-testing/boleto.test.php</name>
-      <docblock line="2">
-        <description><![CDATA[]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="2" name="file" description="Unit testing."/>
-      </docblock>
-    </include>
-    <class final="false" abstract="false" namespace="global" line="9" package="Default">
-      <extends>\BoletoTestCase</extends>
-      <name>TestOf341</name>
-      <full_name>\TestOf341</full_name>
-      <property final="false" static="false" visibility="protected" line="10" namespace="global" package="Default">
-        <name>$mockingArguments</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
-        <name>mockingArguments</name>
-        <full_name>mockingArguments</full_name>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/341/unit-testing/simpletest.php</error>
-      <error line="9" code="50000">No DocBlock was found for \TestOf341</error>
-      <error line="10" code="50018">No DocBlock was found for property $mockingArguments</error>
-      <error line="12" code="50010">No DocBlock was found for method mockingArguments()</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/341/Banco_341.php" hash="6dcbf900fb135b80f98f660a5d6cacba" package="Default">
-    <class final="false" abstract="false" namespace="global" line="9" package="Default">
-      <extends>\Boleto</extends>
-      <name>Banco_341</name>
-      <full_name>\Banco_341</full_name>
-      <docblock line="2">
-        <description><![CDATA[This code is released under the GNU General Public License.]]></description>
-        <long-description><![CDATA[<p>See COPYRIGHT.txt and LICENSE.txt.</p>]]></long-description>
-        <tag line="2" name="author" description="Francisco Luz &lt;franciscoferreiraluz@yahoo.com.au&gt;"/>
-      </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
-        <name>setUp</name>
-        <full_name>setUp</full_name>
-        <docblock line="10">
-          <description><![CDATA[Implementation of setUp().]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
-        <name>febraban_20to44</name>
-        <full_name>febraban_20to44</full_name>
-        <docblock line="17">
-          <description><![CDATA[Implementation of Febraban free range set from position 20 to 44.]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/341/Banco_341.php</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/341/example.php" hash="f47fae271dc6f6d2e67bc03f0020a82a" package="Default">
-    <docblock line="2">
-      <description><![CDATA[This code is released under the GNU General Public License.]]></description>
-      <long-description><![CDATA[<p>See COPYRIGHT.txt and LICENSE.txt.</p>]]></long-description>
-      <tag line="2" name="author" description="Francisco Luz &lt;franciscoferreiraluz@yahoo.com.au&gt;"/>
-    </docblock>
-    <include line="12" type="Include Once" package="Default">
-      <name>../../Boleto.class.php</name>
-      <docblock line="9">
-        <description><![CDATA[Include the main boleto class file.]]></description>
-        <long-description><![CDATA[]]></long-description>
-      </docblock>
-    </include>
-  </file>
-  <file path="bancos/104/unit-testing/simpletest.php" hash="ea875336632b03f9481f2dc27e6420b2" package="Default">
-    <include line="7" type="Require Once" package="Default">
-      <name>../../../unit-testing/boleto.test.php</name>
-      <docblock line="2">
-        <description><![CDATA[]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="2" name="file" description="Unit testing."/>
-      </docblock>
-    </include>
-    <class final="false" abstract="false" namespace="global" line="9" package="Default">
-      <extends>\BoletoTestCase</extends>
-      <name>TestOf104</name>
-      <full_name>\TestOf104</full_name>
-      <property final="false" static="false" visibility="protected" line="10" namespace="global" package="Default">
-        <name>$mockingArguments</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
-        <name>mockingArguments</name>
-        <full_name>mockingArguments</full_name>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/104/unit-testing/simpletest.php</error>
-      <error line="9" code="50000">No DocBlock was found for \TestOf104</error>
-      <error line="10" code="50018">No DocBlock was found for property $mockingArguments</error>
-      <error line="12" code="50010">No DocBlock was found for method mockingArguments()</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/104/example.php" hash="b422a94151352e74458886e29a7ff870" package="Default">
-    <docblock line="2">
-      <description><![CDATA[]]></description>
-      <long-description><![CDATA[]]></long-description>
-      <tag line="2" name="file" description="Example for Caixa Economica Bank."/>
-    </docblock>
-    <include line="10" type="Include Once" package="Default">
-      <name>../../Boleto.class.php</name>
-      <docblock line="7">
-        <description><![CDATA[Include the main boleto class file.]]></description>
-        <long-description><![CDATA[]]></long-description>
-      </docblock>
-    </include>
-    <parse_markers>
-      <critical line="2" code="50008">No short description for file bancos/104/example.php</critical>
-    </parse_markers>
-  </file>
-  <file path="bancos/104/Banco_104.php" hash="e7db45f1ef0bb52ffb89e3eda7f5f621" package="Default">
-    <class final="false" abstract="false" namespace="global" line="9" package="Default">
-      <extends>\Boleto</extends>
-      <name>Banco_104</name>
-      <full_name>\Banco_104</full_name>
-      <docblock line="2">
-        <description><![CDATA[This code is released under the GNU General Public License.]]></description>
-        <long-description><![CDATA[<p>See COPYRIGHT.txt and LICENSE.txt.</p>]]></long-description>
-        <tag line="2" name="author" description="Francisco Luz &lt;franciscoferreiraluz@yahoo.com.au&gt;"/>
-      </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
-        <name>setUp</name>
-        <full_name>setUp</full_name>
-        <docblock line="10">
-          <description><![CDATA[Implementation of setUp().]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
-        <name>febraban_20to44</name>
-        <full_name>febraban_20to44</full_name>
-        <docblock line="17">
-          <description><![CDATA[Implementation of Febraban free range set from position 20 to 44.]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="Default">
-        <name>custom</name>
-        <full_name>custom</full_name>
-        <docblock line="32">
-          <description><![CDATA[Customize object to meet specific needs.]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="46" package="Default">
-        <name>outputValues</name>
-        <full_name>outputValues</full_name>
-        <docblock line="42">
-          <description><![CDATA[Manipulate output fields before them getting rendered.]]></description>
-          <long-description><![CDATA[<p>This method is
-called by output().</p>]]></long-description>
-        </docblock>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/104/Banco_104.php</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/001/Banco_001.php" hash="0db77e910dec81e06f149d10d5f7c55e" package="Default">
-    <class final="false" abstract="false" namespace="global" line="11" package="BoletoLibraryPHP">
-      <extends>\Boleto</extends>
-      <name>Banco_001</name>
-      <full_name>\Banco_001</full_name>
-      <docblock line="2">
-        <description><![CDATA[This code is released under the GNU General Public License.]]></description>
-        <long-description><![CDATA[<p>See COPYRIGHT.txt and LICENSE.txt.</p>]]></long-description>
-        <tag line="2" name="author" description="Francisco Luz &lt;franciscoferreiraluz@yahoo.com.au&gt;"/>
-        <tag line="2" name="mainpage" description="Banco do Brasil Plugin for Boleto Library PHP."/>
-        <tag line="2" name="package" description="BoletoLibraryPHP"/>
-      </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="BoletoLibraryPHP">
-        <name>setUp</name>
-        <full_name>setUp</full_name>
-        <docblock line="12">
-          <description><![CDATA[Implementation of setUp().]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="22" package="BoletoLibraryPHP">
-        <name>febraban_20to44</name>
-        <full_name>febraban_20to44</full_name>
-        <docblock line="19">
-          <description><![CDATA[Implementation of Febraban free range set from position 20 to 44.]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="120" package="BoletoLibraryPHP">
-        <name>custom</name>
-        <full_name>custom</full_name>
-        <docblock line="117">
-          <description><![CDATA[Customize object to meet specific needs.]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="133" package="BoletoLibraryPHP">
-        <name>outputValues</name>
-        <full_name>outputValues</full_name>
-        <docblock line="129">
-          <description><![CDATA[Manipulate output fields before them getting rendered.]]></description>
-          <long-description><![CDATA[<p>This method is called by output().</p>]]></long-description>
-        </docblock>
-      </method>
-    </class>
-    <markers>
-      <todo line="106">Implement more carteiras</todo>
-    </markers>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/001/Banco_001.php</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/001/unit-testing/simpletest.php" hash="92ce1aa587d6e3bef36d6ee86253731b" package="Default">
-    <include line="7" type="Require Once" package="Default">
-      <name>../../../unit-testing/boleto.test.php</name>
-      <docblock line="2">
-        <description><![CDATA[]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="2" name="file" description="Unit testing."/>
-      </docblock>
-    </include>
-    <class final="false" abstract="false" namespace="global" line="9" package="Default">
-      <extends>\BoletoTestCase</extends>
-      <name>TestOf001</name>
-      <full_name>\TestOf001</full_name>
-      <property final="false" static="false" visibility="protected" line="10" namespace="global" package="Default">
-        <name>$mockingArguments</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
-        <name>mockingArguments</name>
-        <full_name>mockingArguments</full_name>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/001/unit-testing/simpletest.php</error>
-      <error line="9" code="50000">No DocBlock was found for \TestOf001</error>
-      <error line="10" code="50018">No DocBlock was found for property $mockingArguments</error>
-      <error line="12" code="50010">No DocBlock was found for method mockingArguments()</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/001/layout.tpl.php" hash="da899e07833749d13ca9f905c39f8f07" package="Default">
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/001/layout.tpl.php</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/001/example.php" hash="418683244c9e98d39694e4d08ecf25e6" package="Default">
-    <docblock line="2">
-      <description><![CDATA[]]></description>
-      <long-description><![CDATA[]]></long-description>
-      <tag line="2" name="file" description="Example for Banco do Brasil."/>
-    </docblock>
-    <include line="10" type="Include Once" package="Default">
-      <name>../../Boleto.class.php</name>
-      <docblock line="7">
-        <description><![CDATA[Include the main boleto class file.]]></description>
-        <long-description><![CDATA[]]></long-description>
-      </docblock>
-    </include>
-    <parse_markers>
-      <critical line="2" code="50008">No short description for file bancos/001/example.php</critical>
-    </parse_markers>
-  </file>
-  <file path="bancos/748/Banco_748.php" hash="9d6e07b4ea6cfb20903e2d55155da1e0" package="Default">
-    <class final="false" abstract="false" namespace="global" line="9" package="Default">
-      <extends>\Boleto</extends>
-      <name>Banco_748</name>
-      <full_name>\Banco_748</full_name>
-      <docblock line="2">
-        <description><![CDATA[This code is released under the GNU General Public License.]]></description>
-        <long-description><![CDATA[<p>See COPYRIGHT.txt and LICENSE.txt.</p>]]></long-description>
-        <tag line="2" name="author" description="Francisco Luz &lt;franciscoferreiraluz@yahoo.com.au&gt;"/>
-      </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
-        <name>setUp</name>
-        <full_name>setUp</full_name>
-        <docblock line="10">
-          <description><![CDATA[Implementation of setUp().]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="Default">
-        <name>febraban_20to44</name>
-        <full_name>febraban_20to44</full_name>
-        <docblock line="17">
-          <description><![CDATA[Implementation of Febraban free range set from position 20 to 44]]></description>
-          <long-description><![CDATA[<p>Posição Tam Conteúdo
-20 – 20 01 Código numérico correspondente ao tipo de cobrança: “3” –
-           SICREDI.
-21 – 21 01 Código numérico correspondente ao tipo de carteira: “1” -
-           carteira simples
-22 – 30 09 Nosso número
-31 – 34 04 Cooperativa de crédito/agência cedente
-35 – 36 02 Posto da cooperativa de crédito/agência cedente
-37 – 41 05 Código do cedente (Numero da conta do cedente sem o digito
-           verificador)
-42 – 42 01 Filler - zeros (Obs.: será 1 (um) quando houver valor expresso
-           no campo “valor
-           do documento”
-43 – 43 01 Filler – zeros
-44 – 44 01 DV do campo livre calculado por módulo 11 com aproveitamento
-           total (resto igual a
-           0 ou 1 DV cai para 0)</p>]]></long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="110" package="Default">
-        <name>outputValues</name>
-        <full_name>outputValues</full_name>
-        <docblock line="107">
-          <description><![CDATA[Implements outputValues() method.]]></description>
-          <long-description><![CDATA[]]></long-description>
-        </docblock>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/748/Banco_748.php</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/748/unit-testing/simpletest.php" hash="7506b815160397e343074d9e2aec4ccd" package="Default">
-    <include line="7" type="Require Once" package="Default">
-      <name>../../../unit-testing/boleto.test.php</name>
-      <docblock line="2">
-        <description><![CDATA[]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="2" name="file" description="Unit testing."/>
-      </docblock>
-    </include>
-    <class final="false" abstract="false" namespace="global" line="9" package="Default">
-      <extends>\BoletoTestCase</extends>
-      <name>TestOf748</name>
-      <full_name>\TestOf748</full_name>
-      <property final="false" static="false" visibility="protected" line="10" namespace="global" package="Default">
-        <name>$mockingArguments</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
-        <name>mockingArguments</name>
-        <full_name>mockingArguments</full_name>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file bancos/748/unit-testing/simpletest.php</error>
-      <error line="9" code="50000">No DocBlock was found for \TestOf748</error>
-      <error line="10" code="50018">No DocBlock was found for property $mockingArguments</error>
-      <error line="12" code="50010">No DocBlock was found for method mockingArguments()</error>
-    </parse_markers>
-  </file>
-  <file path="bancos/748/example.php" hash="1bdb333b084f2e0fdac252084bcf6635" package="Default">
-    <docblock line="2">
-      <description><![CDATA[]]></description>
-      <long-description><![CDATA[]]></long-description>
-      <tag line="2" name="file" description="Example for Caixa Economica Bank."/>
-    </docblock>
-    <include line="10" type="Include Once" package="Default">
-      <name>../../Boleto.class.php</name>
-      <docblock line="7">
-        <description><![CDATA[Include the main boleto class file.]]></description>
-        <long-description><![CDATA[]]></long-description>
-      </docblock>
-    </include>
-    <parse_markers>
-      <critical line="2" code="50008">No short description for file bancos/748/example.php</critical>
-    </parse_markers>
-  </file>
-  <file path="unit-testing/boleto.test.php" hash="687529541c0b80ba7ce17521edec81d8" package="Default">
-    <include line="7" type="Require Once" package="Default">
-      <name>simpletest/autorun.php</name>
-      <docblock line="2">
-        <description><![CDATA[]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="2" name="file" description="Unit testing."/>
-      </docblock>
-    </include>
-    <include line="8" type="Require Once" package="Default">
-      <name>../../../Boleto.class.php</name>
-    </include>
-    <include line="41" type="Include Once" package="Default">
-      <name/>
-    </include>
-    <class final="false" abstract="false" namespace="global" line="13" package="Default">
-      <extends>\UnitTestCase</extends>
-      <name>BoletoTestCase</name>
-      <full_name>\BoletoTestCase</full_name>
-      <docblock line="10">
-        <description><![CDATA[Tutorial at http://www.simpletest.org/en/first_test_tutorial.html.]]></description>
-        <long-description><![CDATA[]]></long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="14" namespace="global" package="Default">
-        <name>$boletoObject</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="15" namespace="global" package="Default">
-        <name>$bank_code</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="16" namespace="global" package="Default">
-        <name>$plugin_class_file</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="17" namespace="global" package="Default">
-        <name>$plugin_class_name</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="18" namespace="global" package="Default">
-        <name>$plugin_simpletest_class_name</name>
-        <default><![CDATA[]]></default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
-        <name>__construct</name>
-        <full_name>__construct</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="50" package="Default">
-        <name>testBoletoObjectsHasBeenInstantiated</name>
-        <full_name>testBoletoObjectsHasBeenInstantiated</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="56" package="Default">
-        <name>testPluginSimpleTestClassExists</name>
-        <full_name>testPluginSimpleTestClassExists</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="61" package="Default">
-        <name>testTheBankCodeArgumentIsTheSameAsCodeInTheSimpleTestClassName</name>
-        <full_name>testTheBankCodeArgumentIsTheSameAsCodeInTheSimpleTestClassName</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="67" package="Default">
-        <name>testPluginClassFileExists</name>
-        <full_name>testPluginClassFileExists</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="Default">
-        <name>testPluginClassExists</name>
-        <full_name>testPluginClassExists</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="75" package="Default">
-        <name>testFebraban20to44MethodExists</name>
-        <full_name>testFebraban20to44MethodExists</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="79" package="Default">
-        <name>testMockingArgumentsExists</name>
-        <full_name>testMockingArgumentsExists</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="83" package="Default">
-        <name>testMockingArgumentsPropertyIsAnArrayAndIsPopulated</name>
-        <full_name>testMockingArgumentsPropertyIsAnArrayAndIsPopulated</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="90" package="Default">
-        <name>testFebraban20to44PropertyIsNumericAndHas25Digits</name>
-        <full_name>testFebraban20to44PropertyIsNumericAndHas25Digits</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="98" package="Default">
-        <name>testLinhaDigitavelHasTheRequiredNumberOfCharactersAndIsNumeric</name>
-        <full_name>testLinhaDigitavelHasTheRequiredNumberOfCharactersAndIsNumeric</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="113" package="Default">
-        <name>testPluginReadmeFileExistsAndItsNameFollowsTheConvention</name>
-        <full_name>testPluginReadmeFileExistsAndItsNameFollowsTheConvention</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="125" package="Default">
-        <name>testPluginBankLogoFileExistsAndItIsOfJpgType</name>
-        <full_name>testPluginBankLogoFileExistsAndItIsOfJpgType</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="136" package="Default">
-        <name>testPluginExampleFileExists</name>
-        <full_name>testPluginExampleFileExists</full_name>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file unit-testing/boleto.test.php</error>
-      <error line="14" code="50018">No DocBlock was found for property $boletoObject</error>
-      <error line="15" code="50018">No DocBlock was found for property $bank_code</error>
-      <error line="16" code="50018">No DocBlock was found for property $plugin_class_file</error>
-      <error line="17" code="50018">No DocBlock was found for property $plugin_class_name</error>
-      <error line="18" code="50018">No DocBlock was found for property $plugin_simpletest_class_name</error>
-      <error line="20" code="50010">No DocBlock was found for method __construct()</error>
-      <error line="50" code="50010">No DocBlock was found for method testBoletoObjectsHasBeenInstantiated()</error>
-      <error line="56" code="50010">No DocBlock was found for method testPluginSimpleTestClassExists()</error>
-      <error line="61" code="50010">No DocBlock was found for method testTheBankCodeArgumentIsTheSameAsCodeInTheSimpleTestClassName()</error>
-      <error line="67" code="50010">No DocBlock was found for method testPluginClassFileExists()</error>
-      <error line="71" code="50010">No DocBlock was found for method testPluginClassExists()</error>
-      <error line="75" code="50010">No DocBlock was found for method testFebraban20to44MethodExists()</error>
-      <error line="79" code="50010">No DocBlock was found for method testMockingArgumentsExists()</error>
-      <error line="83" code="50010">No DocBlock was found for method testMockingArgumentsPropertyIsAnArrayAndIsPopulated()</error>
-      <error line="90" code="50010">No DocBlock was found for method testFebraban20to44PropertyIsNumericAndHas25Digits()</error>
-      <error line="98" code="50010">No DocBlock was found for method testLinhaDigitavelHasTheRequiredNumberOfCharactersAndIsNumeric()</error>
-      <error line="113" code="50010">No DocBlock was found for method testPluginReadmeFileExistsAndItsNameFollowsTheConvention()</error>
-      <error line="125" code="50010">No DocBlock was found for method testPluginBankLogoFileExistsAndItIsOfJpgType()</error>
-      <error line="136" code="50010">No DocBlock was found for method testPluginExampleFileExists()</error>
-    </parse_markers>
-  </file>
-  <file path="Boleto.class.php" hash="7ece77016f94f5cf80a7d91cb255e343" package="BoletoLibraryPHP">
+  <file path="Boleto.class.php" hash="24608362171f4518adbfb79b53fa2796" package="BoletoLibraryPHP">
     <docblock line="2">
       <description><![CDATA[This is the main class that does all the calculations and generatens the
 Boleto output.]]></description>
@@ -594,10 +9,16 @@ Boleto output.]]></description>
       <tag line="2" name="author" description="Francisco Luz &lt;franciscoferreiraluz@yahoo.com.au&gt;"/>
       <tag line="2" name="package" description="BoletoLibraryPHP"/>
     </docblock>
-    <include line="193" type="Include Once" package="Default">
+    <include line="194" type="Include Once" package="Default">
       <name/>
     </include>
-    <include line="765" type="Include Once" package="Default">
+    <include line="766" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <include line="802" type="Include Once" package="Default">
+      <name/>
+    </include>
+    <include line="919" type="Include Once" package="Default">
       <name/>
     </include>
     <class final="false" abstract="false" namespace="global" line="16" package="Default">
@@ -620,7 +41,7 @@ Boleto output.]]></description>
       <constant namespace="global" line="26" package="Default">
         <name>IMAGES_FOLDER</name>
         <full_name>IMAGES_FOLDER</full_name>
-        <value><![CDATA['../imagens/']]></value>
+        <value><![CDATA['/imagens/']]></value>
         <docblock line="23">
           <description><![CDATA[Image folder location.]]></description>
           <long-description><![CDATA[]]></long-description>
@@ -733,69 +154,69 @@ will then instantiate the Boleto object accordingly.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="204" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="205" package="Default">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <argument line="204">
+        <argument line="205">
           <name>$arguments</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="232" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="233" package="Default">
         <name>modulo_10</name>
         <full_name>modulo_10</full_name>
-        <docblock line="221">
+        <docblock line="222">
           <description><![CDATA[Calculates a check digit from any given number based on the modulo 10
 specification.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="221" name="param" description="The number you wish to calcule the check digit from." type="String" variable="$num">
+          <tag line="222" name="param" description="The number you wish to calcule the check digit from." type="String" variable="$num">
             <type by_reference="false">String</type>
           </tag>
-          <tag line="221" name="see" description="\global\Documentation" refers="\global\Documentation"/>
-          <tag line="221" name="return" description="The check digit number." type="String">
+          <tag line="222" name="see" description="\global\Documentation" refers="\global\Documentation"/>
+          <tag line="222" name="return" description="The check digit number." type="String">
             <type by_reference="false">String</type>
           </tag>
         </docblock>
-        <argument line="232">
+        <argument line="233">
           <name>$num</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="278" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="279" package="Default">
         <name>modulo_11</name>
         <full_name>modulo_11</full_name>
-        <docblock line="265">
+        <docblock line="266">
           <description><![CDATA[Calculates a check digit from any given number based on the modulo 11
 specification.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="265" name="param" description="The number you wish to calcule the check digit from." type="string" variable="$num">
+          <tag line="266" name="param" description="The number you wish to calcule the check digit from." type="string" variable="$num">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="265" name="param" description="Optional. This is defaulted to 9." type="string" variable="$base">
+          <tag line="266" name="param" description="Optional. This is defaulted to 9." type="string" variable="$base">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="265" name="see" description="\global\Documentation" refers="\global\Documentation"/>
-          <tag line="265" name="return" description="The returned array keys are digito and resto." type="array">
+          <tag line="266" name="see" description="\global\Documentation" refers="\global\Documentation"/>
+          <tag line="266" name="return" description="The returned array keys are digito and resto." type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="278">
+        <argument line="279">
           <name>$num</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="278">
+        <argument line="279">
           <name>$base</name>
           <default><![CDATA[9]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="317" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="318" package="Default">
         <name>data_vencimento</name>
         <full_name>data_vencimento</full_name>
-        <docblock line="307">
+        <docblock line="308">
           <description><![CDATA[Calculation of "Due Date" field.]]></description>
           <long-description><![CDATA[<p>Argument values expected are:
   -1 for Cash against document.
@@ -806,28 +227,28 @@ specification.]]></description>
 <p>If argument is empty then it adds 5 days on top of issuing date as default.</p>]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="357" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="358" package="Default">
         <name>fator_vencimento</name>
         <full_name>fator_vencimento</full_name>
-        <docblock line="351">
+        <docblock line="352">
           <description><![CDATA[Calculates the "Due date" 4 digits factor number.]]></description>
           <long-description><![CDATA[<p>It is the positions from 6 to 9 in the Febraban array.</p>
 
 <p>Script from http:// phpbrasil.com/articles/print.php/id/1034 .</p>]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="381" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="382" package="Default">
         <name>codigo_banco_com_dv</name>
         <full_name>codigo_banco_com_dv</full_name>
-        <docblock line="378">
+        <docblock line="379">
           <description><![CDATA[Calculates the check digit for bank code.]]></description>
           <long-description><![CDATA[]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="407" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="408" package="Default">
         <name>febraban</name>
         <full_name>febraban</full_name>
-        <docblock line="393">
+        <docblock line="394">
           <description><![CDATA[Calculates and constructs the FEBRABAN specification.]]></description>
           <long-description><![CDATA[<p>01-03 (3)  -> Código do banco sem o digito
 04-04 (1)  -> Código da Moeda (9-Real)
@@ -837,200 +258,211 @@ specification.]]></description>
 20-44 (25) -> Campo Livre
               This is calculated at the child's class implementation by
               febraban20to44() method.</p>]]></long-description>
-          <tag line="393" name="see" description="\global\Documentation" refers="\global\Documentation"/>
+          <tag line="394" name="see" description="\global\Documentation" refers="\global\Documentation"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="460" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="461" package="Default">
         <name>linha_digitavel</name>
         <full_name>linha_digitavel</full_name>
-        <docblock line="457">
+        <docblock line="458">
           <description><![CDATA[Assembles the human readable code set (linha digitavel).]]></description>
           <long-description><![CDATA[]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="513" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="514" package="Default">
         <name>settings</name>
         <full_name>settings</full_name>
-        <docblock line="510">
+        <docblock line="511">
           <description><![CDATA[Pre settting.]]></description>
           <long-description><![CDATA[]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="584" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="585" package="Default">
         <name>barcode</name>
         <full_name>barcode</full_name>
-        <docblock line="581">
+        <docblock line="582">
           <description><![CDATA[Generate bar code strips.]]></description>
           <long-description><![CDATA[]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="690" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="691" package="Default">
         <name>direita</name>
         <full_name>direita</full_name>
-        <docblock line="679">
+        <docblock line="680">
           <description><![CDATA[Helper function for barcode().]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="679" name="param" description="TODO: Document this." type="String" variable="$entra">
+          <tag line="680" name="param" description="TODO: Document this." type="String" variable="$entra">
             <type by_reference="false">String</type>
           </tag>
-          <tag line="679" name="param" description="TODO: Document this." type="String" variable="$comp">
+          <tag line="680" name="param" description="TODO: Document this." type="String" variable="$comp">
             <type by_reference="false">String</type>
           </tag>
-          <tag line="679" name="return" description="TODO: Document this." type="String">
+          <tag line="680" name="return" description="TODO: Document this." type="String">
             <type by_reference="false">String</type>
           </tag>
         </docblock>
-        <argument line="690">
+        <argument line="691">
           <name>$entra</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="690">
+        <argument line="691">
           <name>$comp</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="703" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="704" package="Default">
         <name>output</name>
         <full_name>output</full_name>
-        <docblock line="694">
+        <docblock line="695">
           <description><![CDATA[Populates the output property and renders the boleto output.]]></description>
           <long-description><![CDATA[<p>This method is not trigged at the start up. It gotta be called after object
 instantiation.</p>]]></long-description>
-          <tag line="694" name="param" description="Whether or not the output should be rendered." type="Boolean" variable="$render">
+          <tag line="695" name="param" description="Whether or not the output should be rendered." type="Boolean" variable="$render">
             <type by_reference="false">Boolean</type>
           </tag>
         </docblock>
-        <argument line="703">
+        <argument line="704">
           <name>$render</name>
           <default><![CDATA[TRUE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="772" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="773" package="Default">
         <name>constructObject</name>
         <full_name>constructObject</full_name>
-        <docblock line="769">
+        <docblock line="770">
           <description><![CDATA[Call the construction methods.]]></description>
           <long-description><![CDATA[]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="784" package="Default">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="785" package="Default">
         <name>installedPlugins</name>
         <full_name>installedPlugins</full_name>
-        <docblock line="778">
-          <description><![CDATA[Scan for installed bank plugins.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="778" name="return" description="An array of bank codes." type="Array">
+        <docblock line="779">
+          <description><![CDATA[Scan for correctly installed bank plugins.]]></description>
+          <long-description><![CDATA[<p>Must be called statically.</p>]]></long-description>
+          <tag line="779" name="return" description="An array list of all bank code plugins installed." type="Array">
             <type by_reference="false">Array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="816" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="834" package="Default">
         <name>setWarning</name>
         <full_name>setWarning</full_name>
-        <docblock line="806">
+        <docblock line="824">
           <description><![CDATA[Setter for warnings property.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="806" name="param" description="The array key holds the field name and the array Value holds the Message to be set or unset." type="Array" variable="$message">
+          <tag line="824" name="param" description="The array key holds the field name and the array Value holds the Message to be set or unset." type="Array" variable="$message">
             <type by_reference="false">Array</type>
           </tag>
-          <tag line="806" name="param" description="Whether or not the current warning should be added to the warning parameter" type="Boolean" variable="$action">
+          <tag line="824" name="param" description="Whether or not the current warning should be added to the warning parameter" type="Boolean" variable="$action">
             <type by_reference="false">Boolean</type>
           </tag>
         </docblock>
-        <argument line="816">
+        <argument line="834">
           <name>$message</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="816">
+        <argument line="834">
           <name>$action</name>
           <default><![CDATA[TRUE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="831" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="849" package="Default">
         <name>bankNamePropertySetter</name>
         <full_name>bankNamePropertySetter</full_name>
-        <docblock line="825">
+        <docblock line="843">
           <description><![CDATA[Bank Name Property Setter.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="825" name="param" description="The new value for bank name property." type="String" variable="$bank_name">
+          <tag line="843" name="param" description="The new value for bank name property." type="String" variable="$bank_name">
             <type by_reference="false">String</type>
           </tag>
         </docblock>
-        <argument line="831">
+        <argument line="849">
           <name>$bank_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="838" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="856" package="Default">
         <name>bankNamePropertyGetter</name>
         <full_name>bankNamePropertyGetter</full_name>
-        <docblock line="835">
+        <docblock line="853">
           <description><![CDATA[Bank Name Property Getter.]]></description>
           <long-description><![CDATA[]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="845" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="863" package="Default">
         <name>febrabanPropertyGetter</name>
         <full_name>febrabanPropertyGetter</full_name>
-        <docblock line="842">
+        <docblock line="860">
           <description><![CDATA[Febraban Property Getter.]]></description>
           <long-description><![CDATA[]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="852" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="870" package="Default">
         <name>settingsPropertyGetter</name>
         <full_name>settingsPropertyGetter</full_name>
-        <docblock line="849">
+        <docblock line="867">
           <description><![CDATA[Settings Property Getter.]]></description>
           <long-description><![CDATA[]]></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="862" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="880" package="Default">
         <name>settingsPropertySetter</name>
         <full_name>settingsPropertySetter</full_name>
-        <docblock line="856">
+        <docblock line="874">
           <description><![CDATA[Setter for settings property.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="856" name="param" description="The array of setting values." type="Array" variable="$settings">
+          <tag line="874" name="param" description="The array of setting values." type="Array" variable="$settings">
             <type by_reference="false">Array</type>
           </tag>
         </docblock>
-        <argument line="862">
+        <argument line="880">
           <name>$settings</name>
           <default><![CDATA[array()]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="885" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="903" package="Default">
         <name>outputPropertyGetter</name>
         <full_name>outputPropertyGetter</full_name>
-        <docblock line="882">
+        <docblock line="900">
           <description><![CDATA[Output Property Getter.]]></description>
           <long-description><![CDATA[]]></long-description>
         </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="916" package="Default">
+        <name>reprintBoleto</name>
+        <full_name>reprintBoleto</full_name>
+        <docblock line="910">
+          <description><![CDATA[Boleto Reprint.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="910" name="param" description="The field values previously generated by output() method." type="Array" variable="$output">
+            <type by_reference="false">Array</type>
+          </tag>
+        </docblock>
+        <argument line="916">
+          <name>$output</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
       </method>
     </class>
     <parse_markers>
       <error line="159" code="50018">No DocBlock was found for property $startUp</error>
       <critical line="170" code="50019">No short description for property $output</critical>
-      <error line="204" code="50010">No DocBlock was found for method __construct()</error>
-    </parse_markers>
-  </file>
-  <file path="boleto.tpl.php" hash="8cdf89f8283381f62808f922d1c19335" package="Default">
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file boleto.tpl.php</error>
+      <error line="205" code="50010">No DocBlock was found for method __construct()</error>
     </parse_markers>
   </file>
   <package name="BoletoLibraryPHP" full_name="BoletoLibraryPHP"/>
   <package name="Default" full_name="Default"/>
   <namespace name="global" full_name="global"/>
-  <marker count="1">todo</marker>
+  <marker count="0">todo</marker>
   <marker count="0">fixme</marker>
   <deprecated count="0"/>
 </project>

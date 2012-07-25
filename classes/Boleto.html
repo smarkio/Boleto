@@ -20,7 +20,6 @@
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a>Packages</a></li>
-<li><a href="../packages/BoletoLibraryPHP.html"><i class="icon-folder-open"></i> BoletoLibraryPHP</a></li>
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 </ul>
 </li>
@@ -32,11 +31,9 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">53</span></a></li>
+                <span class="label label-info">3</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul><li>todo 
-                <span class="label label-info">1</span>
-</li></ul></a></li>
+                <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
 </ul>
@@ -61,10 +58,11 @@
 <li class="method public "><a href="#bankNamePropertyGetter" title="bankNamePropertyGetter :: Bank Name Property Getter."><span class="description">Bank Name Property Getter.</span><pre>bankNamePropertyGetter()</pre></a></li>
 <li class="method public "><a href="#bankNamePropertySetter" title="bankNamePropertySetter :: Bank Name Property Setter."><span class="description">Bank Name Property Setter.</span><pre>bankNamePropertySetter()</pre></a></li>
 <li class="method public "><a href="#febrabanPropertyGetter" title="febrabanPropertyGetter :: Febraban Property Getter."><span class="description">Febraban Property Getter.</span><pre>febrabanPropertyGetter()</pre></a></li>
-<li class="method public "><a href="#installedPlugins" title="installedPlugins :: Scan for installed bank plugins."><span class="description">Scan for installed bank plugins.</span><pre>installedPlugins()</pre></a></li>
+<li class="method public "><a href="#installedPlugins" title="installedPlugins :: Scan for correctly installed bank plugins."><span class="description">Scan for correctly installed bank plugins.</span><pre>installedPlugins()</pre></a></li>
 <li class="method public "><a href="#load_boleto" title="load_boleto :: This is the method that the library consumer must call statically."><span class="description">This is the method that the library consumer must call statically.</span><pre>load_boleto()</pre></a></li>
 <li class="method public "><a href="#output" title="output :: Populates the output property and renders the boleto output."><span class="description">Populates the output property and renders the boleto output.</span><pre>output()</pre></a></li>
 <li class="method public "><a href="#outputPropertyGetter" title="outputPropertyGetter :: Output Property Getter."><span class="description">Output Property Getter.</span><pre>outputPropertyGetter()</pre></a></li>
+<li class="method public "><a href="#reprintBoleto" title="reprintBoleto :: Boleto Reprint."><span class="description">Boleto Reprint.</span><pre>reprintBoleto()</pre></a></li>
 <li class="method public "><a href="#setWarning" title="setWarning :: Setter for warnings property."><span class="description">Setter for warnings property.</span><pre>setWarning()</pre></a></li>
 <li class="method public "><a href="#settingsPropertyGetter" title="settingsPropertyGetter :: Settings Property Getter."><span class="description">Settings Property Getter.</span><pre>settingsPropertyGetter()</pre></a></li>
 <li class="method public "><a href="#settingsPropertySetter" title="settingsPropertySetter :: Setter for settings property."><span class="description">Setter for settings property.</span><pre>settingsPropertySetter()</pre></a></li>
@@ -147,14 +145,14 @@ specification.</span><pre>modulo_11()</pre></a></li>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="installedPlugins" id="installedPlugins"></a><div class="element clickable method public installedPlugins" data-toggle="collapse" data-target=".installedPlugins .collapse">
-<h2>Scan for installed bank plugins.</h2>
+<h2>Scan for correctly installed bank plugins.</h2>
 <pre>installedPlugins() : Array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<p class="long_description"><p>Must be called statically.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>Array</code>An array of bank codes.</div>
+<code>Array</code>An array list of all bank code plugins installed.</div>
 </div></div>
 </div>
 <a name="load_boleto" id="load_boleto"></a><div class="element clickable method public load_boleto" data-toggle="collapse" data-target=".load_boleto .collapse">
@@ -192,6 +190,19 @@ instantiation.</p></p>
 <pre>outputPropertyGetter() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="reprintBoleto" id="reprintBoleto"></a><div class="element clickable method public reprintBoleto" data-toggle="collapse" data-target=".reprintBoleto .collapse">
+<h2>Boleto Reprint.</h2>
+<pre>reprintBoleto(Array $output) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$output</h4>
+<code>Array</code><p>The field values previously generated by output() method.</p>
+</div>
+</div></div>
 </div>
 <a name="setWarning" id="setWarning"></a><div class="element clickable method public setWarning" data-toggle="collapse" data-target=".setWarning .collapse">
 <h2>Setter for warnings property.</h2>
@@ -465,7 +476,7 @@ specification.</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a7</a> and<br>
-            generated on 2012-07-20T18:51:23-04:00.<br></footer></div>
+            generated on 2012-07-25T18:29:18-04:00.<br></footer></div>
 </div>
 </body>
 </html>
