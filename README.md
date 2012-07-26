@@ -6,6 +6,7 @@
 3. [Implementando novos Bancos e Carteiras](#3-implementando-novos-bancos-e-carteiras)
 4. [Contribuindo com a Biblioteca Principal](#4-contribuindo-com-c%C3%93digo-em-geral)
 5. [Testes de Unidades (Simple Test)](#5-testes-de-unidades-simple-test)
+6. [Quem Usa Esta Biblioteca](#6-quem-usa-esta-biblioteca)
 
 ## 1. COMO USAR E INTEGRAR ESTA BIBLIOTECA À SUA APLICAÇÃO
 
@@ -530,3 +531,10 @@ function testNomeExplicativoDoMeuTesteNoFormatoDesteExemplo() {
 
 Mais exemplos em http://www.simpletest.org/en/first_test_tutorial.html e também no arquivo
 `../boleto-lib/unit-testing/boleto.test.php`
+
+## 6. QUEM USA ESTA BIBLIOTECA
+
+1. Commerce Boleto para Drupal Commerce - http://drupal.org/project/commerce_boleto
+
+Abra um chamado em https://github.com/drupalista-br/boleto-lib/issues e fale a respeito do seu
+projeto para que ele possa ser mencionado nesta sessão.
