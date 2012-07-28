@@ -286,7 +286,7 @@ Onde XXX em TestOfXXX é o código do banco.
     <tr>
         <td>Obrigatório</td>
         <td>setUp()</td>
-        <td>Você precisa no mínimo popular a propriedade $bank_name com o nome do banco.</td>
+        <td>Você precisa no mínimo popular a propriedade $this->bank_name com o nome do banco.</td>
     </tr>
     <tr>
         <td>Obrigatório</td>
