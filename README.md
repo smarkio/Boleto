@@ -344,7 +344,7 @@ uma carteira para outra de um mesmo banco.
     <tr>
         <td>05-05</td>
         <td>1</td>
-        <td>Dígito verificador do código de barras</td>
+        <td>Dígito verificador do número febraban</td>
     </tr>
     <tr>
         <td>06-09</td>
