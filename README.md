@@ -151,7 +151,7 @@ $boleto = Boleto::load_boleto($argumentos);
 // Verifica se tudo correu bem.
 if (is_object($boleto)) {
   // Use o arquivo boleto.tpl.php como exemplo para criar o seu template customizado.
-  $settings = array('template' => 'minha_pasta/meu_layout_template.php');
+  $settings = array('template' => '/home/minha_pasta/meu_layout_template.php');
 
   // Informa ao objeto a localização do seu template customizado.
   $boleto->settingsPropertySetter($settings);
