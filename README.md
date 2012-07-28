@@ -284,9 +284,9 @@ Onde XXX em TestOfXXX é o código do banco.
 
 <table>
     <tr>
-        <td>opcional</td>
+        <td>Obrigatório</td>
         <td>setUp()</td>
-        <td></td>
+        <td>Você precisa no mínimo popular a propriedade $bank_name com o nome do banco.</td>
     </tr>
     <tr>
         <td>Obrigatório</td>
