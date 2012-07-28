@@ -436,11 +436,11 @@ abstract class Boleto {
     }    
     // Position 5 (check digit for the whole set).
     $this->febraban['5-5'] = $checkDigit['digito'];
-    
+
     // Check if febraban property is complying with the rules and
     // create an array of allowed lenghs for each febraban block.
     $rules = array('1-3' => 3, '4-4' => 1, '5-5' => 1, '6-9' => 4, '10-19' => 10, '20-44' => 25);
-    
+
     foreach($this->febraban as $key => $value){
       $lengh = strlen($value);
       if ($lengh != $rules[$key]){
@@ -477,26 +477,26 @@ abstract class Boleto {
     // Concatenates bankCode + currencyCode + first block of 5 characters +
     // checkDigit.
     $part1 = $this->bank_code. $this->febraban['4-4'] . $blocks['20-24'] . $checkDigit;
-    
+
     // Calculates part2 check digit from 2nd block of 10 characters.
     $checkDigit = $this->modulo_10($blocks['25-34']);
-     
+
     $part2 = $blocks['25-34'] . $checkDigit;
     // Shift in a dot at its 6th position.
     $part2 = substr_replace($part2, '.', 5, 0);
 
     // Calculates part3 check digit from 3rd block of 10 characters.
     $checkDigit = $this->modulo_10($blocks['35-44']);
-     
+
     // As part2, we do the same process again for part3.
     $part3 = $blocks['35-44'] . $checkDigit;
     $part3 = substr_replace($part3, '.', 5, 0);
-     
+
     // Check digit for the human readable number.
     $cd = $this->febraban['5-5'];
     // Put part4 together.
     $part4  = $this->febraban['6-9'] . $this->febraban['10-19'];
-     
+
     // Now put everything together.
     $this->computed['linha_digitavel'] = "$part1 $part2 $part3 $cd $part4";
      
@@ -512,16 +512,25 @@ abstract class Boleto {
    * Pre settting.
    */
   protected function settings(){
+    $settings = array(
+      'bank_logo' => self::IMAGES_FOLDER . 'bank_logo_default.jpg',
+      'style' => '/style.css',
+      'template' => dirname(__FILE__) . DIRECTORY_SEPARATOR . 'boleto.tpl.php',
+    );
+
+    foreach ($settings as $setting => $setting_value) {
+      if (empty($this->settings[$setting])) {
+        $this->settings[$setting] = $settings[$setting];
+      }
+    }
+
     $this->bank_name = 'O plugin desde banco não informou o nome do banco. Entre em contato com o administrador do plugin.';
-    $this->settings['bank_logo'] = self::IMAGES_FOLDER . 'bank_logo_default.jpg';
-    $this->settings['style'] = '/style.css';
-    $this->settings['template'] = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'boleto.tpl.php';
   
     // Calculate valor_cobrado (total amount).
     $subtractions = $this->arguments['desconto_abatimento'] + $this->arguments['outras_deducoes'];
     $additions  = $this->arguments['mora_multa'] + $this->arguments['outros_acrescimos'];
     $this->computed['valor_cobrado'] = ($this->arguments['valor_boleto'] - $subtractions) + $additions;
-    
+
     // Format valor_boleto.
     $this->arguments['valor_boleto'] = number_format((float)$this->arguments['valor_boleto'], 2, '.', '');
     // format valor_cobrado.
@@ -550,7 +559,7 @@ abstract class Boleto {
       );
       $location = DIRECTORY_SEPARATOR . 'bancos' . DIRECTORY_SEPARATOR . $this->bank_code;
       $true_path = dirname(__FILE__). DIRECTORY_SEPARATOR . 'bancos' . DIRECTORY_SEPARATOR . $this->bank_code;
-      
+
       foreach($files as $key => $value){
         $filename = $value['#file_name'];
         
@@ -559,7 +568,7 @@ abstract class Boleto {
             $this->settings[$key] = $true_path . DIRECTORY_SEPARATOR . $filename;
           }
           else {
-            $this->settings[$key] = $location . DIRECTORY_SEPARATOR . $filename;  
+            $this->settings[$key] = $location . DIRECTORY_SEPARATOR . $filename;
           }
           
         }

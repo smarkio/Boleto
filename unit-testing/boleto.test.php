@@ -190,4 +190,20 @@ abstract class BoletoTestCase extends UnitTestCase {
       $this->assertNotEqual($bank->bankNamePropertyGetter(), $bank_name_default);
     }
   }
+
+  function testsettingsPropertySetterAndGetter() {
+    $settings = array(
+      //'bank_logo' => 'Bank logo', // Logo should be altered at output.
+      'file_location' => 'File location',
+      'style' => 'Style',
+      'template' => 'Template',
+    );
+
+    $this->boletoObject[0]->settingsPropertySetter($settings);
+    $new_settings = $this->boletoObject[0]->settingsPropertyGetter();
+
+    foreach ($settings as $setting => $setting_value) {
+      $this->assertEqual($new_settings[$setting], $settings[$setting]);
+    }
+  }
 }
