@@ -1,6 +1,6 @@
 <?php
 /**
- * This is the main class that does all the calculations and generatens the
+ * This is the main class that does all the calculations and generates the
  * Boleto output.
  *
  * You will also need to install at least one bank plugin for this to work.
@@ -254,8 +254,8 @@ abstract class Boleto {
       }
     }
 
-    $resto  = $numtotal10 % 10;
-    $digito = 10 - $resto;
+    $remainder  = $numtotal10 % 10;
+    $digito = 10 - $remainder;
 
     // Make it zero if check digit is 10.
     $digito = ($digito == 10) ? 0 : $digito;
@@ -276,7 +276,7 @@ abstract class Boleto {
    * @return array
    *  The returned array keys are digito and resto.
    */
-  protected function modulo_11($num, $base=9){
+  public function modulo_11($num, $base=9){
     $fator = 2;
 
     $soma  = 0;
@@ -422,20 +422,23 @@ abstract class Boleto {
     }
 
     // Calculate the check digit (position 5) of all 43 number set.
-    $checkDigit = '';
-    foreach($this->febraban as $value){
-      $checkDigit .= $value;  
+    $check_digit = '';
+    foreach($this->febraban as $key => $value){
+      if ($key != '5-5') {
+        $check_digit .= $value; 
+      }
     }
-    $checkDigit = $this->modulo_11($checkDigit);
-    $resto = $checkDigit['resto'];
-    if ($resto == 0 || $resto == 1 || $resto == 10){
-      $checkDigit['digito'] = 1;
+
+    $check_digit = $this->modulo_11($check_digit);
+    $remainder = $check_digit['resto'];
+    if ($remainder == 0 || $remainder == 1 || $remainder == 10){
+      $check_digit['digito'] = 1;
     }
     else {
-      $checkDigit['digito'] = 11 - $resto;
+      $check_digit['digito'] = 11 - $remainder;
     }    
     // Position 5 (check digit for the whole set).
-    $this->febraban['5-5'] = $checkDigit['digito'];
+    $this->febraban['5-5'] = $check_digit['digito'];
 
     // Check if febraban property is complying with the rules and
     // create an array of allowed lenghs for each febraban block.
@@ -469,27 +472,27 @@ abstract class Boleto {
 
     // Concatenates bankCode + currencyCode + first block of 5 characters and
     // calculates its check digit for part1.
-    $checkDigit = $this->modulo_10($this->bank_code . $this->febraban['4-4'] . $blocks['20-24']);
+    $check_digit = $this->modulo_10($this->bank_code . $this->febraban['4-4'] . $blocks['20-24']);
 
     // Shift in a dot on block 20-24 (5 characters) at its 2nd position.
     $blocks['20-24'] = substr_replace($blocks['20-24'], '.', 1, 0);
 
     // Concatenates bankCode + currencyCode + first block of 5 characters +
     // checkDigit.
-    $part1 = $this->bank_code. $this->febraban['4-4'] . $blocks['20-24'] . $checkDigit;
+    $part1 = $this->bank_code. $this->febraban['4-4'] . $blocks['20-24'] . $check_digit;
 
     // Calculates part2 check digit from 2nd block of 10 characters.
-    $checkDigit = $this->modulo_10($blocks['25-34']);
+    $check_digit = $this->modulo_10($blocks['25-34']);
 
-    $part2 = $blocks['25-34'] . $checkDigit;
+    $part2 = $blocks['25-34'] . $check_digit;
     // Shift in a dot at its 6th position.
     $part2 = substr_replace($part2, '.', 5, 0);
 
     // Calculates part3 check digit from 3rd block of 10 characters.
-    $checkDigit = $this->modulo_10($blocks['35-44']);
+    $check_digit = $this->modulo_10($blocks['35-44']);
 
     // As part2, we do the same process again for part3.
-    $part3 = $blocks['35-44'] . $checkDigit;
+    $part3 = $blocks['35-44'] . $check_digit;
     $part3 = substr_replace($part3, '.', 5, 0);
 
     // Check digit for the human readable number.
@@ -779,7 +782,7 @@ abstract class Boleto {
   /**
    * Call the construction methods.
    */
-  protected function constructObject() {
+  public function constructObject() {
     foreach($this->startUp as $methodName) {
       $this->{$methodName}();
     }

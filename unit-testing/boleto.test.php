@@ -191,7 +191,7 @@ abstract class BoletoTestCase extends UnitTestCase {
     }
   }
 
-  function testsettingsPropertySetterAndGetter() {
+  function testSettingsPropertySetterAndGetter() {
     $settings = array(
       //'bank_logo' => 'Bank logo', // Logo should be altered at output.
       'file_location' => 'File location',
@@ -205,5 +205,38 @@ abstract class BoletoTestCase extends UnitTestCase {
     foreach ($settings as $setting => $setting_value) {
       $this->assertEqual($new_settings[$setting], $settings[$setting]);
     }
+  }
+
+  function testLinhaDigitavelCheckDigit() {
+    $check_digit = '';
+    foreach($this->boletoObject[0]->febrabanPropertyGetter() as $key => $value){
+      if ($key != '5-5') {
+        $check_digit .= $value;
+      }
+    }
+
+    $check_digit = $this->boletoObject[0]->modulo_11($check_digit);
+    $remainder = $check_digit['resto'];
+    if ($remainder == 0 || $remainder == 1 || $remainder == 10){
+      $check_digit['digito'] = 1;
+    }
+    else {
+      $check_digit['digito'] = 11 - $remainder;
+    }    
+
+    // Before any object reconstruction.
+    $output1 = $this->boletoObject[0]->outputPropertyGetter();
+    $output1 = explode(' ', $output1['linha_digitavel']);
+
+    $this->assertEqual($output1[3], $check_digit['digito']);
+
+    // After reconstruction.
+    $output2 = $this->boletoObject[0];
+    $output2->constructObject();
+
+    $output2 = $output2->outputPropertyGetter();
+    $output2 = explode(' ', $output2['linha_digitavel']);
+
+    $this->assertEqual($output2[3], $check_digit['digito']);
   }
 }
