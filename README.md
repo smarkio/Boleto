@@ -176,7 +176,7 @@ os quais possuem plugin corretamente instalados.
 
 ## 2. REPORTANDO BUGS, PEDINDO AJUDA E FAZENDO SUGESTÕES
 
-Abra chamados em https://github.com/drupalista-br/boleto-lib/issues
+Abra chamados em https://github.com/drupalista-br/boleto/issues
 
 ## 3. IMPLEMENTANDO NOVOS BANCOS E CARTEIRAS
 
@@ -536,5 +536,5 @@ Mais exemplos em http://www.simpletest.org/en/first_test_tutorial.html e também
 
 1. Commerce Boleto para Drupal Commerce - http://drupal.org/project/commerce_boleto
 
-Abra um chamado em https://github.com/drupalista-br/boleto-lib/issues e fale a respeito do seu
+Abra um chamado em https://github.com/drupalista-br/boleto/issues e fale a respeito do seu
 projeto para que ele possa ser mencionado nesta sessão.
