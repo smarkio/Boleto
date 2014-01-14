@@ -12,13 +12,16 @@ foreach($this->output as $key => $value){
 }
 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-  <HEAD>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
     <TITLE><?php echo $title; ?></TITLE>
-      <META http-equiv=Content-Type content=text/html charset=ISO-8859-1>
-      <meta name="Generator" content="Boleto PHP Library - http://drupalista-br.github.com" />
-      <link type="text/css" rel="stylesheet" media="all" href="<?php echo $style; ?>" /> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Generator" content="Boleto PHP Library - http://drupalista-br.github.com" />
+    <link type="text/css" rel="stylesheet" media="all" href="<?php echo $style; ?>" /> 
   </head>
 <BODY>
   <table cellspacing=0 cellpadding=0 border=0 width=666>
