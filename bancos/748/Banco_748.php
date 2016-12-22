@@ -6,7 +6,11 @@
  * @author Francisco Luz <franciscoferreiraluz@yahoo.com.au>
  */
 
-class Banco_748 extends Boleto{
+namespace Smarkio\Boleto\Bancos;
+
+use Smarkio\Boleto\Boleto;
+
+class Banco_748 extends Boleto {
   /**
    * Implementation of setUp().
    */

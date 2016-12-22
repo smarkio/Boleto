@@ -10,6 +10,7 @@
  * @package BoletoLibraryPHP
  */
 
+namespace Smarkio\Boleto;
 /**
  * Boleto Library main Class.
  */
