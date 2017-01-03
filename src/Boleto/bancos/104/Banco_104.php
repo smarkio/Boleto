@@ -6,8 +6,6 @@
  * @author Francisco Luz <franciscoferreiraluz@yahoo.com.au>
  */
 
-namespace Smarkio\Boleto\Bancos;
-
 use Smarkio\Boleto\Boleto;
 
 class Banco_104 extends Boleto{

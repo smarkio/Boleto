@@ -8,8 +8,6 @@
  * @package BoletoLibraryPHP
  */
 
-namespace Smarkio\Boleto\Bancos;
-
 use Smarkio\Boleto\Boleto;
 
 class Banco_001 extends Boleto{

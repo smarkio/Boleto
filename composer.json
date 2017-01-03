@@ -8,5 +8,10 @@
       "name": "SMARKIO Developers",
       "email": "developers@smark.io"
     }
-  ]
+  ],
+  "autoload": {
+    "psr-4": {
+      "Smarkio\\": "src/"
+    }
+  }
 }
