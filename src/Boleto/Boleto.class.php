@@ -595,10 +595,8 @@ abstract class Boleto {
         foreach($this->febraban as $value){
             $code .= $value;
         }
-
         // Get bar code values from settings.
         $barcodes = array('00110', '10001', '01001', '11000', '00101', '10100', '01100', '00011', '10010', '01010');
-
         // Apply bar codes to the febraban code.
         for($f1 = 9; $f1 >= 0; $f1--){
             for($f2 = 9; $f2 >= 0; $f2--){
@@ -754,15 +752,19 @@ abstract class Boleto {
 
         // Check if merchant logo exists.
         if (!empty($this->arguments['merchant_logo'])) {
-            $this->output['merchant_logo'] = $this->arguments['merchant_logo'];
+            $this->output['merchant_logo'] = $this->getImageBase64Content($this->arguments['merchant_logo']);
         }
         else {
             // Set default.
-            $this->output['merchant_logo'] = $this->settings['file_location'] . self::IMAGES_FOLDER . 'merchant_logo.png';
+            $this->output['merchant_logo'] = $this->getImageBase64Content($this->settings['file_location'] . self::IMAGES_FOLDER . 'merchant_logo.png');
         }
 
         $this->output['style'] = file_get_contents($this->settings['style']);
         $this->output['bank_logo'] = $this->getImageBase64Content($this->settings['bank_logo']);
+        $this->output['image_1'] = $this->getImageBase64Content($this->settings['file_location'] . self::IMAGES_FOLDER .  '1.png');
+        $this->output['image_2'] = $this->getImageBase64Content($this->settings['file_location'] . self::IMAGES_FOLDER .  '2.png');
+        $this->output['image_3'] = $this->getImageBase64Content($this->settings['file_location'] . self::IMAGES_FOLDER .  '3.png');
+        $this->output['image_6'] = $this->getImageBase64Content($this->settings['file_location'] . self::IMAGES_FOLDER .  '6.png');
 
         // Check if child class wants to change anything before rendering it out.
         if (method_exists($this, 'outputValues')) {
